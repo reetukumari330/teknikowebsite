@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Professional Enquiry Popup</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+    <div class="text-center mt-5">
+        <button class="enquiry-btn" data-bs-toggle="modal" data-bs-target="#enquiryModal">
+            Make an Enquiry
+        </button>
+    </div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: #f8fafc;
+        /* Light Slate Background */
+    }
+
+    /* Trigger Button */
+    .tekniko-enquiry-trigger {
+        background: #0f172a;
+        color: #fff;
+        padding: 12px 35px;
+        border-radius: 12px;
+        font-weight: 600;
+        border: none;
+        transition: all 0.4s ease;
+    }
+
+    .tekniko-enquiry-trigger:hover {
+        background: #38bdf8;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+    }
+
+    /* Modal Styling */
+    .tekniko-modal-content {
+        background: #ffffff;
+        border: none;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Left Info Panel (Light Gradient) */
+    .tekniko-info-card {
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-right: 1px solid #e2e8f0;
+    }
+
+    .tekniko-info-card h2 {
+        font-weight: 700;
+        color: #0f172a;
+        letter-spacing: -1px;
+        margin-bottom: 30px;
+    }
+
+    .tekniko-contact-item {
+        margin-bottom: 25px;
+        color: #475569;
+        font-weight: 400;
+        font-size: 0.95rem;
+    }
+
+    .tekniko-contact-item strong {
+        display: block;
+        color: #38bdf8;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 5px;
+    }
+
+    /* Form Side */
+    .tekniko-form-wrapper {
+        padding: 50px;
+        background: #ffffff;
+    }
+
+    .tekniko-form-wrapper h4 {
+        color: #0f172a;
+    }
+
+    .tekniko-input-group {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    /* Fields */
+    .tekniko-field {
+        background: #fcfdfe !important;
+        border: 1px solid #e2e8f0 !important;
+        color: #1e293b !important;
+        border-radius: 12px !important;
+        padding: 14px 18px !important;
+        transition: all 0.2s ease;
+    }
+
+    .tekniko-field:focus {
+        background: #fff !important;
+        border-color: #38bdf8 !important;
+        box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1) !important;
+        outline: none;
+    }
+
+    .tekniko-field::placeholder {
+        color: #94a3b8;
+    }
+
+    /* Custom Select */
+    .tekniko-select {
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1em;
+    }
+
+    /* Submit Button */
+    .tekniko-submit {
+        background: #0f172a;
+        color: #fff;
+        border: none;
+        padding: 16px;
+        border-radius: 12px;
+        font-weight: 600;
+        width: 100%;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .tekniko-submit:hover {
+        background: #38bdf8;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px rgba(56, 189, 248, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .tekniko-info-card {
+            border-right: none;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 30px;
+        }
+
+        .tekniko-form-wrapper {
+            padding: 30px;
+        }
+    }
+</style>
+
+<div class="modal fade" id="enquiryModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content tekniko-modal-content">
+            <div class="row g-0">
+                <div class="col-md-5 tekniko-info-card">
+                    <h2>Let's build<br>together.</h2>
+
+                    <div class="tekniko-contact-item">
+                        <strong>Noida Office</strong>
+                        H-146, Sector 63, Noida, UP 201301
+                    </div>
+
+                    <div class="tekniko-contact-item">
+                        <strong>Dubai Office</strong>
+                        905, Makateb Building, Deira, Dubai
+                    </div>
+
+                    <div class="tekniko-contact-item">
+                        <strong>Email Us</strong>
+                        corporate@teknikoglobal.com
+                    </div>
+                </div>
+
+                <div class="col-md-7 tekniko-form-wrapper">
+                    <h4 class="mb-4 fw-light">Send an <span class="fw-bold">Enquiry</span></h4>
+
+                    <form>
+                        <div class="tekniko-input-group">
+                            <input type="text" class="form-control tekniko-field" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="tekniko-input-group">
+                            <input type="email" class="form-control tekniko-field" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="d-flex gap-2 mb-3">
+                            <select class="form-select tekniko-field tekniko-select" style="width: 110px;">
+                                <option>+91</option>
+                                <option>+971</option>
+                                <option>+1</option>
+                            </select>
+                            <input type="text" class="form-control tekniko-field w-100" placeholder="Phone Number">
+                        </div>
+
+                        <div class="tekniko-input-group">
+                            <textarea class="form-control tekniko-field" rows="3"
+                                placeholder="Tell us about your project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="tekniko-submit">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

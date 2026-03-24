@@ -1,0 +1,3243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Digital Transformation with AI, Cloud & Cybersecurity | Tekniko Global</title>
+  <meta name="description"
+    content="Tekniko Global delivers digital transformation through software modernization, AI, cloud solutions, cybersecurity, and data analytics.">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.teknikoglobal.com/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    /* ===================== RESET ===================== */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      font-size: 10px;
+      -webkit-text-size-adjust: 100%
+    }
+
+    body {
+      font-family: Inter, sans-serif;
+
+      background: #fff;
+      color: #1b1e55;
+      line-height: 1.5;
+      overflow-x: hidden
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    ul {
+      list-style: none
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block
+    }
+
+    p {
+      font-size: 1.7rem;
+      line-height: 1.5;
+      color: #374151
+    }
+
+    h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1b1e55;
+      line-height: 1.1
+    }
+
+    h3 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1b1e55;
+      line-height: 1.1
+    }
+
+    .container {
+      max-width: 1390px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 15px
+    }
+
+    .text-center {
+      text-align: center
+    }
+
+    .text-uppercase {
+      text-transform: uppercase
+    }
+
+    /* ===================== COLOR VARS ===================== */
+    :root {
+      --blue1: #4a9dff;
+      --blue2: #2584f4;
+      --blue-dark: #1a6fd4;
+      --blue-light: #e8f2ff;
+      --blue-mid: #dbeafe;
+      --accent: #2584f4;
+      --btn-hover: #1a6fd4;
+    }
+
+    /* ===================== HEADER — SPARXIT EXACT LAYOUT ===================== */
+    .main-header {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: background .3s, padding .3s
+    }
+
+    .main-header.sticky {
+      background-color: #0f2340;
+      padding: 0
+    }
+
+    .main-header * {
+      font-family: Inter, sans-serif
+    }
+
+    .header_block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .sparx_logo img {
+      height: 40px
+    }
+
+    /* Hamburger */
+    .navbar-toggler {
+      width: 30px;
+      border: none;
+      cursor: pointer;
+      background: transparent
+    }
+
+    .navbar-toggler span {
+      width: 100%;
+      height: 3px;
+      margin: 0 auto 6px;
+      display: block;
+      background: #fff;
+      transition: .3s linear
+    }
+
+    .navbar-toggler span:last-child {
+      margin-bottom: 0
+    }
+
+    .navbar-toggler.active .line-1 {
+      transform: rotate(45deg);
+      margin: 7px 0 0 6px
+    }
+
+    .navbar-toggler.active .line-3 {
+      transform: rotate(-45deg);
+      margin: -12px 0 0 6px
+    }
+
+    .navbar-toggler.active .line-2 {
+      opacity: 0
+    }
+
+    body.menu-open {
+      overflow: hidden
+    }
+
+    /* Mobile Nav */
+    .main-navigation {
+      position: absolute;
+      top: 100%;
+      padding: 0 0 35px;
+      width: 100%;
+      left: 0;
+      overflow: auto;
+      background: #fff;
+      display: none;
+      height: calc(100vh - 60px);
+      z-index: 1
+    }
+
+    .main-navigation.effect {
+      display: block
+    }
+
+    .main_menu li {
+      border-top: 1px solid #ebebeb;
+      position: relative
+    }
+
+    .main_menu li a {
+      display: flex;
+      padding: 20px;
+      color: #667085;
+      font-size: 1.6rem;
+      font-weight: 600;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    .down-arrow {
+      display: inline-block;
+      border: solid #667085;
+      border-width: 0 2px 2px 0;
+      padding: 4px;
+      width: 7px;
+      height: 7px;
+      margin-left: 15px;
+      margin-top: 2px;
+      transform: rotate(45deg);
+      transition: .3s;
+      flex-shrink: 0
+    }
+
+    .main_menu li.contact_us {
+      padding: 15px 20px
+    }
+
+    .main_menu li.contact_us a {
+      padding: 16px 20px;
+      border: 1px solid var(--blue2);
+      color: var(--blue2) !important;
+      justify-content: center;
+      border-radius: 8px
+    }
+
+    .main_menu li.contact_us a:hover {
+      background: var(--blue2);
+      color: #fff !important
+    }
+
+    /* Mobile sub-dropdown */
+    .mob-dropdown {
+      display: none;
+      background: #f0f6ff;
+      padding: 5px 0
+    }
+
+    .mob-dropdown.open {
+      display: block
+    }
+
+    .mob-dropdown a {
+      display: block;
+      padding: 12px 25px;
+      color: #374151 !important;
+      font-size: 1.5rem;
+      font-weight: 500;
+      border-bottom: 1px solid #dbeafe
+    }
+
+    .mob-dropdown a:hover {
+      color: var(--blue2) !important
+    }
+
+    /* ===== DESKTOP NAV (1199px+) — SPARXIT EXACT ===== */
+    @media(min-width:1199px) {
+      .navbar-toggler {
+        display: none
+      }
+
+      .main-navigation {
+        position: static;
+        padding-bottom: 0;
+        display: flex !important;
+        height: auto;
+        overflow: visible;
+        width: calc(100% - 113px);
+        padding-left: 40px;
+        background: transparent
+      }
+
+      .main_menu {
+        display: flex;
+        align-items: center;
+        width: 100%
+      }
+
+      .main_menu li {
+        border-top: none
+      }
+
+      .main_menu li a {
+        padding: 24px 20px 23px;
+        display: inline-flex;
+        color: #fff;
+        font-size: 1.5rem
+      }
+
+      .main_menu li a:hover {
+        color: var(--blue1)
+      }
+
+      .main_menu li.contact_us {
+        margin-left: auto;
+        padding: 15px 0
+      }
+
+      .main_menu li.contact_us a {
+        color: #fff !important;
+        border: 1px solid #fff;
+        padding: 9px 18px;
+        border-radius: 6px
+      }
+
+      .main_menu li.contact_us a:hover {
+        background: var(--blue2);
+        border-color: var(--blue2)
+      }
+
+      .down-arrow {
+        border-color: #fff;
+        padding: 3px;
+        margin-top: -5px
+      }
+
+      /* Mega dropdown */
+      .mob-dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        min-width: 230px;
+        box-shadow: 0 8px 30px rgba(37, 132, 244, .15);
+        border-radius: 8px;
+        padding: 8px 0;
+        z-index: 200;
+        border-top: 3px solid var(--blue2)
+      }
+
+      .main_menu li:hover .mob-dropdown {
+        display: block
+      }
+
+      .mob-dropdown a {
+        display: block;
+        color: #1b1e55 !important;
+        padding: 11px 20px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        border-bottom: 1px solid #f0f6ff
+      }
+
+      .mob-dropdown a:last-child {
+        border-bottom: none
+      }
+
+      .mob-dropdown a:hover {
+        color: var(--blue2) !important;
+        background: #e8f2ff;
+        padding-left: 24px
+      }
+    }
+
+    /* ===================== BUTTONS ===================== */
+    .primary-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--blue2);
+      color: #fff;
+      padding: 11px 20px 10px;
+      border-radius: 8px;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: all .3s;
+      margin-left: 16px;
+    }
+
+    .primary-btn::after {
+      content: "";
+      background: url("https://www.sparxitsolutions.com/sites/images/white-arrow.svg") no-repeat center;
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+      display: inline-block;
+      transition: .2s linear
+    }
+
+    .primary-btn:hover {
+      background: #fff;
+      color: var(--blue2);
+      border-color: var(--blue2)
+    }
+
+    .primary-btn:hover::after {
+      filter: invert(40%) sepia(90%) saturate(800%) hue-rotate(200deg);
+      transform: translateX(4px)
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--blue2);
+      font-size: 1.6rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      transition: .3s
+    }
+
+    .text-link::after {
+      content: "";
+      background: url("https://www.sparxitsolutions.com/sites/images/_right_arrow.svg") no-repeat center;
+      filter: invert(40%) sepia(90%) saturate(800%) hue-rotate(200deg);
+      width: 15px;
+      height: 13px;
+      margin-left: 6px;
+      display: inline-block;
+      transition: .2s
+    }
+
+    .text-link:hover::after {
+      transform: translateX(4px)
+    }
+
+    .text-link:hover {
+      background: var(--blue-light);
+      border-radius: 5px
+    }
+
+    /* ===================== BANNER ===================== */
+    .banner {
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      min-height: 600px;
+      max-height: 922px
+    }
+
+    @media(max-width:767px) {
+      .banner {
+        height: auto;
+        min-height: 550px;
+        max-height: none
+      }
+    }
+
+    .banner-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      pointer-events: none;
+      z-index: 1
+    }
+
+    .banner-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2
+    }
+
+    .banner-graphic {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .banner-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: linear-gradient(to right, rgba(10, 30, 70, .82) 0%, rgba(10, 30, 70, .5) 50%, rgba(10, 30, 70, .2) 100%) */
+    }
+
+    .banner-content-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 100px 0 80px;
+      z-index: 3
+    }
+
+    @media(max-width:767px) {
+      .banner-content-wrap {
+        padding: 110px 0 170px;
+        align-items: flex-start
+      }
+    }
+
+    .banner-content-sec {
+      width: 62%;
+      max-width: 720px
+    }
+
+    @media(max-width:767px) {
+      .banner-content-sec {
+        width: 95%
+      }
+    }
+
+    .banner-content-sec * {
+      color: #fff
+    }
+
+    .main-title {
+      font-size: 4.4rem;
+      font-weight: 700;
+      line-height: 1.12;
+      margin-bottom: 20px;
+      transform: translateY(35px);
+      opacity: 0;
+      transition: opacity .7s ease .1s, transform .7s ease .1s
+    }
+
+    .main-title span {
+      display: block
+    }
+
+    .banner-slide.active .main-title {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .banner-content-sec p {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, .9);
+      transform: translateY(25px);
+      opacity: 0;
+      transition: opacity .7s ease .3s, transform .7s ease .3s
+    }
+
+    .banner-slide.active p {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .banner-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: opacity .7s ease .5s, transform .7s ease .5s
+    }
+
+    .banner-slide.active .banner-btns {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .btn-first {
+      display: inline-flex;
+      align-items: center;
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 600;
+      padding: 13px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--blue1);
+      background: var(--blue2);
+      transition: all .25s
+    }
+
+    .btn-first::after {
+      content: "";
+      background: url("https://www.sparxitsolutions.com/sites/images/white-arrow.svg") no-repeat center;
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+      display: inline-block;
+      transition: .2s linear
+    }
+
+    .btn-first:hover {
+      background: rgba(255, 255, 255, .15)
+    }
+
+    .btn-first:hover::after {
+      transform: translateX(4px)
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(255, 255, 255, .55)
+    }
+
+    .btn-outline::after {
+      background: url("https://www.sparxitsolutions.com/sites/images/banner-chevron-down.svg") no-repeat center;
+      background-size: 18px
+    }
+
+    /* Thumbnail bar */
+    /* Thumbnail bar */
+    .thumbnail-wrap {
+      position: absolute;
+      bottom: 25px;
+      left: 0;
+      width: 100%;
+      z-index: 4;
+    }
+
+    .thumbnail-slider {
+      display: flex;
+      overflow-x: auto;
+      padding: 0 15px;
+    }
+
+    .thumbnail-slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    .thumbnail {
+      cursor: pointer;
+      padding: 12px 17px 10px;
+      min-width: 170px;
+      border-radius: 5px;
+      flex-shrink: 0;
+      transition: background .3s;
+      margin: 18px;
+    }
+
+    .thumbnail:hover {
+      background: rgba(255, 255, 255, .15);
+    }
+
+    .thumbnail.active {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    .thumbnail span {
+      display: block;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 500;
+      padding-top: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Position the ::after pseudo-element as the top border */
+    .thumbnail span::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      /* Position the border at the top of the span */
+      left: 0;
+      height: 6px;
+      /* Border thickness */
+      background: var(--blue1);
+      /* Border color */
+      width: 0;
+      /* Start with no width */
+    }
+
+    /* Trigger the animation when the thumbnail is active */
+    .thumbnail.active span::after {
+      animation: prog 6s linear forwards;
+    }
+
+    /* Progress bar — inactive state */
+    .thumbnail span::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+    }
+
+    /* Ensure the active bar (::after) renders on top */
+    .thumbnail span::after {
+      z-index: 1;
+    }
+
+    /* Animation: Width goes from 0 to 100% */
+    @keyframes prog {
+      from {
+        width: 0%;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    /* Dots mobile */
+    .slider-dots {
+      position: absolute;
+      bottom: 95px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+      gap: 10px;
+      z-index: 4
+    }
+
+    @media(max-width:767px) {
+      .slider-dots {
+        display: flex
+      }
+    }
+
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .4);
+      cursor: pointer;
+      transition: .3s;
+      border: 1.5px solid rgba(255, 255, 255, .6)
+    }
+
+    .slider-dot.active {
+      background: #fff
+    }
+
+    @media(min-width:1366px) {
+      .main-title {
+        font-size: 6rem;
+        font-weight: 700;
+        line-height: 1.1;
+        margin-bottom: 15px
+      }
+    }
+
+    @media(min-width:768px) and (max-width:1365px) {
+      .main-title {
+        font-size: 5rem
+      }
+    }
+
+    /* ===================== CLIENTS ===================== */
+    .client-wrapper {
+      padding: 40px 0;
+
+      overflow: hidden
+    }
+
+    .clients-title {
+      color: #9ca3af;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 38px
+    }
+
+    .brands-wrap {
+      overflow: hidden
+    }
+
+    .logos-track {
+      display: flex;
+      animation: scroll-logos 30s linear infinite
+    }
+
+    .logos-slide {
+      flex-shrink: 0
+    }
+
+    .brands-wrap:hover .logos-track {
+      animation-play-state: paused
+    }
+
+    @keyframes scroll-logos {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    /* ===================== SHARED SECTION HEAD ===================== */
+    .section-head {
+      max-width: 860px;
+      width: 100%;
+      margin: 0 auto 50px
+    }
+
+    .section-title {
+      font-size: 3rem;
+      margin-bottom: 14px
+    }
+
+    .section-subtitle {
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 1.45;
+      color: #374151
+    }
+
+    /* ===================== CASE STUDIES ===================== */
+    .casestudies-section {
+      padding: 70px 0 40px
+    }
+
+    .casestudies-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 55px;
+      flex-wrap: wrap;
+      gap: 20px
+    }
+
+    .casestudies-head-sec {
+      max-width: 65%
+    }
+
+    .casestudies-head-sec strong {
+      color: #9ca3af;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 26px
+    }
+
+    .casestudies-head-sec h2 {
+      margin-bottom: 15px;
+      font-size: 4rem;
+    }
+
+    .casestudies-head-sec p {
+      font-size: 1.9rem;
+      font-weight: 500;
+      color: #050f24
+    }
+
+    .casestudies-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 40px;
+      background: #fff;
+      flex-wrap: wrap
+    }
+
+    .casestudies-img {
+      width: 100%;
+      max-width: 710px
+    }
+
+    .casestudies-img img {
+      width: 100%;
+      /* border-radius: 10px; */
+      object-fit: cover;
+      height: 480px
+    }
+
+    .casestudies-content {
+      flex: 1;
+      min-width: 270px;
+      padding-top: 12px
+    }
+
+    .casestudies-content h3 {
+      font-size: 3.4rem;
+      margin-bottom: 18px;
+      margin-left: 16px;
+    }
+
+    .casestudies-content p {
+      margin-bottom: 22px;
+      margin-left: 16px;
+    }
+
+    .project-points {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+
+    }
+
+    .project-points li {
+      color: #1e429f;
+      font-size: 1.4rem;
+      font-weight: 500;
+      background: var(--blue-mid);
+      border-radius: 6px;
+      padding: 4px 12px
+    }
+
+    @media(max-width:767px) {
+      .casestudies-head {
+        flex-direction: column
+      }
+
+      .casestudies-head-sec {
+        max-width: 100%
+      }
+
+      .casestudies-img {
+        max-width: 100%
+      }
+    }
+
+    /* ===================== TECHNOLOGIES ===================== */
+    /* .technologies-section {
+      position: relative;
+      padding: 90px 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #050f24 0%, #0d2144 50%, #0a1c3a 100%)
+    } */
+
+    .technologies-section {
+      position: relative;
+      padding: 90px 0;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    /* VIDEO AS BACKGROUND */
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      /* acts like background */
+    }
+
+    /* OPTIONAL OVERLAY */
+    .technologies-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 15, 36, 0.7);
+      z-index: 0;
+    }
+
+    /* CONTENT */
+    .content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .technologies-section * {
+      color: #fff
+    }
+
+    .technologies-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 80px
+    }
+
+    .technologies-head {
+      width: 100%;
+      max-width: 760px
+    }
+
+    @media(min-width:768px) {
+      .technologies-head {
+        width: 44%;
+        position: sticky;
+        top: 110px
+      }
+
+      .technologies-content {
+        width: 36%;
+        padding-top: 20px
+      }
+    }
+
+    .technologies-title {
+      font-size: 6.5rem;
+      line-height: 1.25;
+      margin-bottom: 22px;
+      font-weight: 900
+    }
+
+    .technologies-subtitle {
+      font-size: 1.9rem;
+      margin-bottom: 33px;
+
+      line-height: 1.55
+    }
+
+    .technologies-content {
+      flex: 1;
+      min-width: 280px
+    }
+
+    .technologies-box {
+      margin-bottom: 6px;
+      /* border-radius: 10px; */
+      transition: .3s
+    }
+
+    .technologies-box {
+      width: 100%;
+      max-width: 520px;
+      /* 👈 width control yahan */
+    }
+
+    .technologies-box a {
+      display: block;
+      padding: 22px;
+      border-radius: 10px;
+      transition: .3s;
+      position: relative;
+      min-height: 170px;
+      /* border: 1px solid rgba(255, 255, 255, .08) */
+    }
+
+    .technologies-box a:hover {
+      background: rgba(74, 157, 255, .12);
+      border-color: rgba(74, 157, 255, .4)
+    }
+
+    .technologies-box h3 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      padding-top: 22px
+    }
+
+    .technologies-box h3::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      width: calc(100% - 44px);
+      height: 4px;
+      border-radius: 2px;
+      margin-bottom: 14px;
+      background: rgba(255, 255, 255, .2);
+      transition: .3s
+    }
+
+    .technologies-box a:hover h3::before {
+      background: var(--blue1)
+    }
+
+    .technologies-box p {
+      font-size: 1.6rem;
+      opacity: .75;
+      line-height: 1.55;
+      margin-bottom: 22px
+    }
+
+    .technologies-box a::after {
+      content: "";
+      background: url("https://www.sparxitsolutions.com/sites/images/white-arrow.svg") no-repeat;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 22px;
+      bottom: 22px
+    }
+
+    /* ===================== AWARDS ===================== */
+    .awards-section {
+      padding: 70px 0
+    }
+
+    .awards-block {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      overflow: auto;
+      padding-bottom: 10px
+    }
+
+    .awards-box {
+      flex: 0 0 300px
+    }
+
+    .awards-logo {
+      height: 140px;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .awards-logo img {
+      max-width: 140px
+    }
+
+    .Clutch-logo {
+      background: #17313b
+    }
+
+    .goodfirms-logo {
+      background: linear-gradient(135deg, var(--blue2), var(--blue-dark))
+    }
+
+    .itfirms-logo {
+      background: linear-gradient(135deg, #1a6fd4, #0d2144)
+    }
+
+    .awards-content {
+      padding: 20px;
+      border-radius: 0 0 10px 10px;
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(37, 132, 244, .1)
+    }
+
+    .awards-content strong {
+      font-size: 1.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      line-height: 1.25;
+      color: #1b1e55
+    }
+
+    .awards-years {
+      display: flex;
+      gap: 8px
+    }
+
+    .awards-years li {
+      color: #1e429f;
+      font-size: 1.3rem;
+      font-weight: 500;
+      background: var(--blue-mid);
+      border-radius: 4px;
+      padding: 3px 10px
+    }
+
+    /* ===================== TESTIMONIALS ===================== */
+    .testimonial-section {
+      padding: 60px 0;
+      background: #f0f6ff
+    }
+
+    .testimonial-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 10px
+    }
+
+    .testimonial-box {
+      background: #fff;
+      padding: 28px;
+      border-radius: 12px;
+      flex: 1;
+      min-width: 280px;
+      box-shadow: 0 2px 12px rgba(37, 132, 244, .08);
+      border: 1px solid rgba(37, 132, 244, .1)
+    }
+
+    .speakers {
+      font-size: 1.9rem;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 16px;
+      color: #1b1e55
+    }
+
+    .testimonial-box p {
+      color: #374151;
+      line-height: 1.6;
+      margin-bottom: 20px
+    }
+
+    .user-detail {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid var(--blue-mid)
+    }
+
+    .user-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .user-pic {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--blue-mid)
+    }
+
+    .user-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: block;
+      color: #1b1e55
+    }
+
+    .user-info {
+      font-size: 1.3rem;
+      color: #6b7280
+    }
+
+    .company_logo img {
+      max-height: 28px;
+      max-width: 80px;
+      object-fit: contain
+    }
+
+    /* ===================== CTA ===================== */
+    .cta-wrapper {
+      padding: 60px 0
+    }
+
+    .cta-wrap {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      background: linear-gradient(135deg, #f0f6ff 0%, #dbeafe 100%);
+      border: 1px solid rgba(37, 132, 244, .2);
+      border-radius: 14px;
+      padding: 40px 55px;
+      box-shadow: 0 4px 20px rgba(37, 132, 244, .1)
+    }
+
+    .cta-img {
+      width: 40%;
+      max-width: 360px
+    }
+
+    .cta-img img {
+      width: 100%
+    }
+
+    .cta-txt {
+      flex: 1;
+      min-width: 240px
+    }
+
+    .cta-txt h3 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: #0d2144
+    }
+
+    .cta-txt p {
+      margin-bottom: 28px;
+      font-weight: 500;
+      color: #374151
+    }
+
+    @media(max-width:767px) {
+      .cta-wrap {
+        flex-direction: column;
+        padding: 28px 20px
+      }
+
+      .cta-img {
+        width: 100%;
+        max-width: 100%
+      }
+    }
+
+    /* ===================== INDUSTRY ===================== */
+    .industry-section {
+      padding: 60px 0
+    }
+
+    .industry-wrap.industry-wrap-block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px
+    }
+
+    .industry-box {
+      flex: 1;
+      min-width: 220px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1.5px solid rgba(37, 132, 244, .12);
+      padding: 22px 18px;
+      box-shadow: 0 4px 16px rgba(37, 132, 244, .07);
+      transition: transform .3s, box-shadow .3s
+    }
+
+    .industry-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(37, 132, 244, .15);
+      border-color: var(--blue1)
+    }
+
+    .in-gb {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--blue-light);
+      margin-bottom: 14px
+    }
+
+    .industry-box h3 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--blue2);
+      border-bottom: 1.5px solid var(--blue-mid);
+      padding-bottom: 12px;
+      margin-bottom: 12px
+    }
+
+    .industry-listing {
+      margin-bottom: 20px
+    }
+
+    .industry-listing li {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      padding-left: 26px;
+      position: relative;
+      color: #374151
+    }
+
+    .industry-listing li::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      border-radius: 50%;
+      background: url("https://www.sparxitsolutions.com/sites/images/check-white.svg") center no-repeat var(--blue2)
+    }
+
+    .industry-listing li a {
+      color: #374151;
+      transition: .2s
+    }
+
+    .industry-listing li a:hover {
+      color: var(--blue2);
+      text-decoration: underline
+    }
+
+    /* ===== EXPERTISE — 8 CARDS 4+4 ===== */
+    .expertise-head {
+      font-size: 2.8rem;
+      margin: 55px 0 28px;
+      font-weight: 700;
+      color: #1b1e55
+    }
+
+    .expertise-industry {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px
+    }
+
+    @media(max-width:992px) {
+      .expertise-industry {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:576px) {
+      .expertise-industry {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .industry-image {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      border: none;
+      padding: 0 !important;
+      box-shadow: none;
+      height: 260px
+    }
+
+    .industry-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .55s cubic-bezier(.85, 0, 0, 1);
+      display: block
+    }
+
+    .industry-image:hover img {
+      transform: scale(1.15)
+    }
+
+    .industry-image h3 {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 700;
+      z-index: 2;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, .6)
+    }
+
+    .industry-overlap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      padding: 56px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity .45s linear
+    }
+
+    .industry-image:hover .industry-overlap {
+      opacity: 1
+    }
+
+    .industry-overlap ul {
+      margin-bottom: 10px;
+      padding-left: 16px
+    }
+
+    .industry-overlap ul li {
+      color: #fff;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      list-style: disc
+    }
+
+    .industry-overlap span {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px
+    }
+
+    /* ===== TECH STACK TAGS ===== */
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px
+    }
+
+    .tech-tag {
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 5px;
+      border: 1.5px solid var(--blue1);
+      color: var(--blue2);
+      background: var(--blue-light);
+      transition: .2s
+    }
+
+    .tech-tag:hover {
+      background: var(--blue2);
+      color: #fff
+    }
+
+    /* ===================== ABOUT STATS ===================== */
+    .about-section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f0f6ff 0%, #dbeafe 100%)
+    }
+
+    .about-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 28px
+    }
+
+    .about-box {
+      flex: 1;
+      min-width: 200px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 4px 16px rgba(37, 132, 244, .1);
+      border: 1px solid rgba(37, 132, 244, .15);
+      transition: transform .3s
+    }
+
+    .about-box:hover {
+      transform: translateY(-3px)
+    }
+
+    .about-info {
+      color: var(--blue2);
+      font-size: 3.8rem;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 10px
+    }
+
+    .about-box p {
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: #374151;
+      line-height: 1.3
+    }
+
+    /* ===================== PRODUCTS ===================== */
+    .exciting-section {
+      padding: 60px 0
+    }
+
+    .exciting-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 20px
+    }
+
+    .exciting-head div {
+      max-width: 62%
+    }
+
+    .exciting-head h2 {
+      margin-bottom: 12px
+    }
+
+    .exciting-block {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap
+    }
+
+    .exciting-box {
+      flex: 1;
+      min-width: 250px
+    }
+
+    .exciting-sec {
+      min-height: 185px;
+      background: #fff;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(37, 132, 244, .1);
+      border: 1.5px solid rgba(37, 132, 244, .12);
+      transition: transform .3s, box-shadow .3s
+    }
+
+    .exciting-sec:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(37, 132, 244, .18);
+      border-color: var(--blue1)
+    }
+
+    .exciting-sec img {
+      max-height: 80px;
+      object-fit: contain
+    }
+
+    .exciting-box h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #1b1e55
+    }
+
+    @media(max-width:767px) {
+      .exciting-head div {
+        max-width: 100%
+      }
+
+      .exciting-head {
+        flex-direction: column
+      }
+    }
+
+    /* ===================== EVENTS ===================== */
+    .event-section {
+      padding: 60px 0
+    }
+
+    .event-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px
+    }
+
+    .event-box {
+      flex: 1;
+      min-width: 280px
+    }
+
+    .event-block {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(37, 132, 244, .1);
+      border: 1px solid rgba(37, 132, 244, .1);
+      transition: transform .3s, box-shadow .3s
+    }
+
+    .event-block:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(37, 132, 244, .18)
+    }
+
+    .event-gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover
+    }
+
+    .event-content {
+      padding: 20px
+    }
+
+    .event-title {
+      font-size: 2rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 16px;
+      color: #1b1e55
+    }
+
+    .event-location {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap
+    }
+
+    .event-location li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #6b7280
+    }
+
+    /* ===================== BLOG ===================== */
+    .blog-section {
+      padding: 70px 0
+    }
+
+    .blog-head {
+      margin-bottom: 48px
+    }
+
+    .blog-title {
+      font-size: 3rem;
+      margin-bottom: 14px
+    }
+
+    .blog-subtitle {
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: #374151
+    }
+
+    .blog-wrap {
+      display: flex;
+      flex-wrap: wrap
+    }
+
+    .blog-sec {
+      flex: 1;
+      min-width: 260px;
+      padding: 0 24px 15px
+    }
+
+    .blog-sec:first-child {
+      padding-left: 0
+    }
+
+    .blog-sec:last-child {
+      padding-right: 0
+    }
+
+    .blog-sec2 {
+      border-left: 1.5px solid var(--blue-mid);
+      border-right: 1.5px solid var(--blue-mid)
+    }
+
+    .blog-thumbnail {
+      margin-bottom: 18px
+    }
+
+    .blog-thumbnail img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+      transition: .3s
+    }
+
+    .blog-thumbnail img:hover {
+      transform: scale(1.02)
+    }
+
+    .blog-content {
+      margin-bottom: 24px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 18px
+    }
+
+    .blog-content:last-child {
+      border-bottom: none
+    }
+
+    .time-read {
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 0 10px 0 28px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      background: var(--blue-mid) url("https://www.sparxitsolutions.com/sites/images/clock.svg") 10px center no-repeat;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      color: #1e429f
+    }
+
+    .feed-link {
+      margin-bottom: 14px
+    }
+
+    .feed-link a {
+      font-size: 1.9rem;
+      font-weight: 600;
+      color: #1b1e55;
+      line-height: 1.3;
+      transition: .2s
+    }
+
+    .feed-link a:hover {
+      color: var(--blue2)
+    }
+
+    /* ===================== FOOTER ===================== */
+    .footer-section {
+      background: linear-gradient(135deg, #050f24 0%, #0d2144 100%);
+      padding: 65px 0 30px
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+      margin-bottom: 45px
+    }
+
+    .footer-col h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #fff
+    }
+
+    .footer-col ul li {
+      margin-bottom: 12px
+    }
+
+    .footer-col ul li a {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, .65);
+      transition: .2s
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--blue1)
+    }
+
+    .footer-logo-img {
+      height: 38px;
+      margin-bottom: 16px;
+      display: block
+    }
+
+    .footer-desc {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.65;
+      margin-bottom: 22px
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, .1);
+      border-radius: 50%;
+      transition: .3s;
+      border: 1px solid rgba(255, 255, 255, .15)
+    }
+
+    .social-links a:hover {
+      background: var(--blue2);
+      border-color: var(--blue2)
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .copy-right {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, .5)
+    }
+
+    .terms-links {
+      display: flex;
+      gap: 18px
+    }
+
+    .terms-links a {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, .5);
+      text-decoration: underline;
+      transition: .2s
+    }
+
+    .terms-links a:hover {
+      color: var(--blue1)
+    }
+
+    /* ===================== SCROLL ANIMATIONS ===================== */
+    .anim-fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .anim-fade.in {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .anim-scale {
+      opacity: 0;
+      transform: scale(.95);
+      transition: opacity .6s ease, transform .6s ease
+    }
+
+    .anim-scale.in {
+      opacity: 1;
+      transform: scale(1)
+    }
+
+    .d1 {
+      transition-delay: .1s !important
+    }
+
+    .d2 {
+      transition-delay: .2s !important
+    }
+
+    .d3 {
+      transition-delay: .3s !important
+    }
+
+    .d4 {
+      transition-delay: .4s !important
+    }
+  </style>
+  <style>
+    /* ===== CASE STUDIES SECTION ===== */
+.casestudies-section {
+    padding: 60px 0 30px;
+}
+
+.casestudies-head {
+    margin-bottom: 40px;
+}
+
+.casestudies-head-sec {
+    width: 100%;
+}
+
+.casestudies-head-sec strong {
+    color: #9ca3af;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.casestudies-head-sec h2 {
+    margin-bottom: 19px;
+}
+
+.casestudies-head-sec p {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.casestudies-row {
+    justify-content: space-between;
+    margin-bottom: 26px;
+    background-color: #fff;
+}
+
+.casestudies-img {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.casestudies-img img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.casestudies-content {
+    width: 100%;
+    padding-top: 15px;
+}
+
+.casestudies-content h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.casestudies-content p {
+    font-size: 1.8rem;
+    margin-bottom: 27px;
+}
+
+.casestudies-point {
+    margin-bottom: 30px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .hero-content .col-lg-8 {
+        width: 100%;
+    }
+
+    .hero-content .d-flex {
+        justify-content: center;
+    }
+
+    .btn-contact {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .casestudies-head {
+        margin-bottom: 60px;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .casestudies-head-sec {
+        width: 70%;
+    }
+
+    .casestudies-head-sec p {
+        margin-bottom: 0;
+    }
+
+    .casestudies-content,
+    .casestudies-img {
+        width: 47%;
+    }
+
+    .casestudies-img {
+        margin-bottom: 0;
+    }
+
+    .casestudies-row {
+        margin-bottom: 35px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --logo-width: 150px;
+        --speed: 15s;
+    }
+
+    #title {
+        font-size: 36px;
+        max-width: 100%;
+    }
+
+    .logo-section {
+        padding: 50px 0;
+    }
+
+    .slide-item img {
+        height: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 100vh;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .btn-primary-custom {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .tab {
+        margin: 0 6px;
+        min-width: 100px;
+    }
+
+    .tab-label {
+        font-size: 12px;
+    }
+
+    .tabs {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+    }
+
+    .btn-primary-custom {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 1130px;
+    }
+
+    h2 {
+        font-size: 3.6rem;
+    }
+
+    h3 {
+        font-size: 2.2rem;
+    }
+
+    .casestudies-head,
+    .casestudies-row {
+        position: sticky;
+        top: 90px;
+    }
+
+    .casestudies-row {
+        top: calc((100vh - 300px) / 2);
+        background-color: #fff;
+        margin-bottom: 0;
+        padding-bottom: 40px;
+    }
+
+    .casestudies-row:last-child {
+        margin-bottom: 0;
+    }
+
+    .casestudies-content {
+        padding-top: 25px;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .container {
+        max-width: 1240px;
+    }
+
+    .casestudies-section {
+        padding: 107px 0 0;
+    }
+
+    .casestudies-head {
+        padding-right: 25px;
+        margin-bottom: 30px;
+    }
+
+    .casestudies-head-sec h2 {
+        margin-bottom: 19px;
+    }
+
+    .casestudies-head-sec p {
+        font-size: 2rem;
+        max-width: 514px;
+        letter-spacing: 0.2px;
+    }
+
+    .casestudies-row {
+        top: calc((100vh - 130px) / 2);
+    }
+
+    .casestudies-row:last-child {
+        padding-bottom: 80px;
+    }
+
+    .casestudies-content h3 {
+        font-size: 3rem;
+        letter-spacing: 0.7px;
+        margin-bottom: 16px;
+    }
+
+    .casestudies-img {
+        width: 51.2%;
+    }
+
+    .casestudies-content {
+        width: 44%;
+        padding: 25px 17px 0 0;
+    }
+
+    .casestudies-content p {
+        line-height: 1.5;
+        margin-bottom: 19px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .container {
+        max-width: 1390px;
+    }
+
+    h2 {
+        font-size: 4rem;
+        letter-spacing: 1.2px;
+    }
+
+    .casestudies-row {
+        top: calc((100vh - 260px) / 2);
+        padding-bottom: 50px;
+    }
+
+    .casestudies-content h3 {
+        font-size: 3.6rem;
+        margin-bottom: 31px;
+    }
+
+    .casestudies-content {
+        padding: 37px 17px 0 0;
+    }
+
+    .project-points {
+        margin-bottom: 62px;
+    }
+}
+
+@media only screen and (min-width: 1680px) {
+    .casestudies-row {
+        top: calc((100vh - 400px) / 2);
+    }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER (SPARXIT EXACT LAYOUT) ===== -->
+  <header class="main-header" id="header">
+    <div class="container">
+      <div class="header_block">
+        <a href="https://www.teknikoglobal.com/" class="sparx_logo">
+          <img src="https://www.teknikoglobal.com/public/assets/image/img/brand_logo.webp" alt="Tekniko Global">
+        </a>
+
+        <nav class="main-navigation" id="mainNav">
+          <ul class="main_menu">
+            <li class="has-drop">
+              <a href="#" class="main_link">Services <i class="down-arrow">&nbsp;</i></a>
+              <div class="mob-dropdown">
+                <a href="#">Digital Transformation</a>
+                <a href="#">AI &amp; Machine Learning</a>
+                <a href="#">Generative AI</a>
+                <a href="#">Cloud &amp; DevOps</a>
+                <a href="#">Cybersecurity</a>
+                <a href="#">Data Analytics</a>
+                <a href="#">Product Engineering</a>
+                <a href="#">Quality Engineering</a>
+              </div>
+            </li>
+            <li class="has-drop">
+              <a href="#" class="main_link">Industries <i class="down-arrow">&nbsp;</i></a>
+              <div class="mob-dropdown">
+                <a href="#">Healthcare</a>
+                <a href="#">BFSI</a>
+                <a href="#">Retail &amp; eCommerce</a>
+                <a href="#">Manufacturing</a>
+                <a href="#">Education</a>
+                <a href="#">Travel</a>
+                <a href="#">Real Estate</a>
+                <a href="#">Automotive</a>
+              </div>
+            </li>
+            <li><a href="#" class="main_link">Work</a></li>
+            <li><a href="#" class="main_link">Insights</a></li>
+            <li class="has-drop">
+              <a href="#" class="main_link">Who We Are <i class="down-arrow">&nbsp;</i></a>
+              <div class="mob-dropdown">
+                <a href="#">About Us</a>
+                <a href="#">Leadership</a>
+                <a href="#">Careers</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Events</a>
+                <a href="#">Technologies</a>
+              </div>
+            </li>
+            <li class="contact_us">
+              <a href="#">Contact &rsaquo;</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="navbar-toggler" id="menuToggle" type="button" aria-label="Toggle Menu">
+          <span class="line-1">&nbsp;</span>
+          <span class="line-2">&nbsp;</span>
+          <span class="line-3">&nbsp;</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BANNER SLIDER ===== -->
+  <section class="banner" id="bannerSection">
+
+    <div class="banner-slide active" id="s0">
+      <img src="https://www.sparxitsolutions.com/sites/images/ai-banner.webp" alt="AI" class="banner-graphic">
+      <div class="banner-overlay"></div>
+      <div class="banner-content-wrap">
+        <div class="container">
+          <div class="banner-content-sec">
+            <h1 class="main-title"><span>AI Solutions</span> for Enterprise Innovation &amp; Growth</h1>
+            <p>Designing, building systems, and deploying algorithms, data pipelines, and workflows that convert
+              unstructured data into ready-to-use products.</p>
+            <div class="banner-btns"><a href="#" class="btn-first">Request AI Proposal</a><a href="#"
+                class="btn-first btn-outline">Explore</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-slide" id="s1">
+      <img src="https://www.sparxitsolutions.com/sites/images/digital_transformation.webp" alt="Digital Transformation"
+        class="banner-graphic">
+      <div class="banner-overlay"></div>
+      <div class="banner-content-wrap">
+        <div class="container">
+          <div class="banner-content-sec">
+            <h1 class="main-title"><span>Digital Transformation</span> Services to Modernize Your Business</h1>
+            <p>Assisting businesses to leverage modernizing inventive solutions fueled by technology and software
+              development to augment the overall customer experience.</p>
+            <div class="banner-btns"><a href="#" class="btn-first">Talk to an Expert</a><a href="#"
+                class="btn-first btn-outline">Explore</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-slide" id="s2">
+      <img src="https://www.sparxitsolutions.com/sites/images/Software_modernization.webp" alt="Modernization"
+        class="banner-graphic">
+      <div class="banner-overlay"></div>
+      <div class="banner-content-wrap">
+        <div class="container">
+          <div class="banner-content-sec">
+            <h1 class="main-title"><span>Future-Proof Your Business</span> with Legacy Software Modernization</h1>
+            <p>Deriving full cloud value and outcomes with agile migration and strategic planning while transferring
+              existing legacy systems to fuel innovations.</p>
+            <div class="banner-btns"><a href="#" class="btn-first">Request Quote</a><a href="#"
+                class="btn-first btn-outline">Explore</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-slide" id="s3">
+      <img src="https://www.sparxitsolutions.com/sites/images/cyber_security.webp" alt="Cybersecurity"
+        class="banner-graphic">
+      <div class="banner-overlay"></div>
+      <div class="banner-content-wrap">
+        <div class="container">
+          <div class="banner-content-sec">
+            <h1 class="main-title"><span>Safeguard Your Business</span> with Robust Cybersecurity Solutions</h1>
+            <p>Building proactive defenses and antifragile businesses to defend against cyber threats and attacks with
+              cutting-edge security strategies.</p>
+            <div class="banner-btns"><a href="#" class="btn-first">Schedule Consultation</a><a href="#"
+                class="btn-first btn-outline">Explore</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-slide" id="s4">
+      <img src="https://www.sparxitsolutions.com/sites/images/data_and_Cloud.webp" alt="Cloud" class="banner-graphic">
+      <div class="banner-overlay"></div>
+      <div class="banner-content-wrap">
+        <div class="container">
+          <div class="banner-content-sec">
+            <h1 class="main-title"><span>Empower Growth</span> with Scalable Cloud Technologies</h1>
+            <p>Delivering exceptional customer experiences with data and cloud services with secure, intelligent, and
+              open systems for enterprise growth.</p>
+            <div class="banner-btns"><a href="#" class="btn-first">Talk to Cloud Experts</a><a href="#"
+                class="btn-first btn-outline">Explore</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="banner-slide" id="s5">
+      <img src="https://www.sparxitsolutions.com/sites/images/cyber_security.webp" alt="Analytics"
+        class="banner-graphic">
+      <div class="banner-overlay"></div>
+      <div class="banner-content-wrap">
+        <div class="container">
+          <div class="banner-content-sec">
+            <h1 class="main-title"><span>Accelerate Success</span> with Powerful Data Analytics</h1>
+            <p>Maximizing data value and business outcomes with intelligent analytics, strategic insights, and seamless
+              integration while enhancing decision-making agility.</p>
+            <div class="banner-btns"><a href="#" class="btn-first">Contact Data Experts</a><a href="#"
+                class="btn-first btn-outline">Explore</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="slider-dots" id="sliderDots">
+      <div class="slider-dot active" onclick="goTo(0)"></div>
+      <div class="slider-dot" onclick="goTo(1)"></div>
+      <div class="slider-dot" onclick="goTo(2)"></div>
+      <div class="slider-dot" onclick="goTo(3)"></div>
+      <div class="slider-dot" onclick="goTo(4)"></div>
+      <div class="slider-dot" onclick="goTo(5)"></div>
+    </div>
+
+    <!-- Thumbnails -->
+    <div class="thumbnail-wrap">
+      <div class="container">
+        <div class="thumbnail-slider">
+          <div class="thumbnail active" onclick="goTo(0)"><span>AI-first Approach</span></div>
+          <div class="thumbnail" onclick="goTo(1)"><span>Digital Transformation</span></div>
+          <div class="thumbnail" onclick="goTo(2)"><span>Software Modernization</span></div>
+          <div class="thumbnail" onclick="goTo(3)"><span>Cyber Security</span></div>
+          <div class="thumbnail" onclick="goTo(4)"><span>Cloud Computing</span></div>
+          <div class="thumbnail" onclick="goTo(5)"><span>Data Analytics</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLIENTS ===== -->
+  <div class="client-wrapper">
+    <div class="container-fuild">
+      <h2 class="clients-title text-center text-uppercase">Delivering Value to Clients Worldwide</h2>
+      <div class="brands-wrap">
+        <div class="logos-track">
+          <div class="logos-slide">
+            <picture>
+              <source media="(min-width:768px)"
+                srcset="https://www.sparxitsolutions.com/assets-style/images/brand-component.webp"><img
+                src="https://www.sparxitsolutions.com/assets-style/images/brand-component-mob.webp" alt="Clients"
+                width="1857" height="70">
+            </picture>
+          </div>
+          <div class="logos-slide">
+            <picture>
+              <source media="(min-width:768px)"
+                srcset="https://www.sparxitsolutions.com/assets-style/images/brand-component.webp"><img
+                src="https://www.sparxitsolutions.com/assets-style/images/brand-component-mob.webp" alt="Clients"
+                width="1857" height="70">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CASE STUDIES ===== -->
+  <section class="casestudies-section">
+    <div class="container">
+      <div class="casestudies-head">
+        <div class="casestudies-head-sec">
+          <strong>Case Studies</strong>
+          <h2>Impact-first Projects We Have Delivered</h2>
+          <p>Discover how we have delivered tangible results and created lasting value across industries.</p>
+        </div>
+        <a href="#" class="text-link">See All Case Studies</a>
+      </div>
+
+      <div class="casestudies-row anim-fade">
+        <figure class="casestudies-img"><img src="https://www.sparxitsolutions.com/sites/images/hisense-project.webp"
+            alt="Hisense" width="696" height="472"></figure>
+        <div class="casestudies-content">
+          <h3>Built Hisense Over an AI-powered Auto-scalable Server</h3>
+          <p>For Hisense, we boosted digital performance with a 30% traffic increase, AI-driven scalability, and Amazon
+            EC2 auto-scaling for seamless responsiveness.</p>
+          <ul class="project-points">
+            <li>eCommerce Development</li>
+            <li>Cloud Computing</li>
+            <li>B2B Marketplace</li>
+            <li>Digital Acceleration</li>
+          </ul>
+          <a href="#" class="primary-btn">Know More</a>
+        </div>
+      </div>
+
+      <div class="casestudies-row anim-fade">
+        <figure class="casestudies-img"><img src="https://www.sparxitsolutions.com/sites/images/niva-bupa-project.webp"
+            alt="Niva Bupa" width="696" height="472"></figure>
+        <div class="casestudies-content">
+          <h3>Nurtured Niva Bupa's Talent with Digital Induction</h3>
+          <p>We built an AI-powered induction platform for Niva Bupa, featuring intuitive design, online assessments,
+            and real-time feedback to streamline onboarding.</p>
+          <ul class="project-points">
+            <li>Mobile App Development</li>
+            <li>UI/UX Design</li>
+            <li>Digital Consulting</li>
+            <li>Product Engineering</li>
+          </ul>
+          <a href="#" class="primary-btn">Know More</a>
+        </div>
+      </div>
+
+      <div class="casestudies-row anim-fade">
+        <figure class="casestudies-img"><img src="https://www.sparxitsolutions.com/sites/images/casestudies-suzuki.webp"
+            alt="Suzuki" width="696" height="472"></figure>
+        <div class="casestudies-content">
+          <h3>Suzuki Digital Acceleration on the AI Race Loop</h3>
+          <p>Tekniko Global revamped Suzuki's digital ecosystem with an AI-powered website, AWS server management, and
+            streamlined lead management, enhancing customer experience.</p>
+          <ul class="project-points">
+            <li>Website Development</li>
+            <li>Digital Transformation</li>
+            <li>AWS</li>
+            <li>Legacy Modernization</li>
+            <li>AI Integration</li>
+          </ul>
+          <a href="#" class="primary-btn">Know More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECHNOLOGIES ===== -->
+  <section class="technologies-section">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source
+        src="./images/stock-footage-introducing-the-technology-glorious-a-formidable-tool-meticulously-crafted-to-meet-the-demands-of.webm"
+        type="video/mp4">
+    </video>
+
+
+    <div class="container">
+      <div class="technologies-wrap">
+        <div class="technologies-head">
+          <h2 class="technologies-title">Empowering Ecosystems with Intelligent Technologies</h2>
+          <p class="technologies-subtitle">Supercharging your IT infrastructure with intelligent solutions to streamline
+            processes, ensure scalability and growth.</p>
+          <a href="#" class="primary-btn">Innovate with us</a>
+        </div>
+        <div class="technologies-content" style="margin-left: 10rem;">
+          <div class="technologies-box"><a href="#">
+              <h3>Machine Learning (ML)</h3>
+              <p>Our ML algorithms analyze customer data to improve product recommendations by leveraging predictive
+                analytics, and NLPs to enhance decision-making.</p>
+            </a></div>
+          <div class="technologies-box"><a href="#">
+              <h3>Augmented and Virtual Reality (AR / VR)</h3>
+              <p>By offering interactive demos and virtual try-ons, we upturn sales by up to 200%. Our mixed reality
+                solutions transform business operations.</p>
+            </a></div>
+          <div class="technologies-box"><a href="#">
+              <h3>Internet of Things (IoT)</h3>
+              <p>Reducing costs by automating processes, optimizing resource usage, and providing real-time data across
+                all industry verticals.</p>
+            </a></div>
+          <div class="technologies-box"><a href="#">
+              <h3>Data Engineering</h3>
+              <p>We leverage data engineering and blockchain to build trust, drive change, and position your business as
+                a market leader in a dynamic landscape.</p>
+            </a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS ===== -->
+  <!-- <section class="awards-section">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title">Global Recognition and Awards</h2>
+        <p class="section-subtitle">Accorded as a leading AI-first tech partner, our customer-centric solutions define
+          industry standards.</p>
+      </div>
+      <div class="awards-block">
+        <div class="awards-box anim-fade">
+          <figure class="awards-logo Clutch-logo"><img src="https://www.sparxitsolutions.com/sites/images/clutch_.svg"
+              alt="Clutch" width="182" height="52"></figure>
+          <div class="awards-content"><strong>🏆 Clutch Global Award Winner</strong>
+            <ul class="awards-years">
+              <li>2024</li>
+              <li>2023</li>
+            </ul>
+          </div>
+        </div>
+        <div class="awards-box anim-fade d1">
+          <figure class="awards-logo goodfirms-logo"><img
+              src="https://www.sparxitsolutions.com/sites/images/goodfirm.svg" alt="GoodFirms" width="202" height="30">
+          </figure>
+          <div class="awards-content"><strong>🏆 Top Mobile App Developer</strong>
+            <ul class="awards-years">
+              <li>2024</li>
+              <li>2023</li>
+            </ul>
+          </div>
+        </div>
+        <div class="awards-box anim-fade d2">
+          <figure class="awards-logo itfirms-logo"><img
+              src="https://www.sparxitsolutions.com/sites/images/business_connect.svg" alt="Business Connect"
+              width="131" height="104"></figure>
+          <div class="awards-content"><strong>🏆 Digital Transformation Leader</strong>
+            <ul class="awards-years">
+              <li>2024</li>
+              <li>2023</li>
+              <li>2022</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonial-section">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Words from our partners commending our tailored digital solutions.</p>
+        <a href="#" class="text-link" style="justify-content:center;margin-top:8px;">View all Testimonials</a>
+      </div>
+      <div class="testimonial-wrap">
+        <div class="testimonial-box anim-fade"><strong class="speakers">"It was a great experience to work with</strong>
+          <p>Tekniko Global — they have a professional team that worked dedicatedly from starting to final delivery of
+            my website. I will definitely hire them again."</p>
+          <div class="user-detail">
+            <div class="user-wrap"><img src="https://www.sparxitsolutions.com/assets-style/images/goran_duskic_new.jpg"
+                alt="Goran" class="user-pic">
+              <div><strong class="user-name">Goran Duskic</strong><span class="user-info">Founder &amp; CEO</span></div>
+            </div>
+            <div class="company_logo"><img src="https://www.sparxitsolutions.com/sites/images/testi-1.svg" alt="Co">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-box anim-fade d1"><strong class="speakers">"A great company to work with!</strong>
+          <p>I worked with experts at Tekniko Global for varied projects, including website modernization, end-to-end
+            product engineering, and customer experience. They delivered with complete dedication."</p>
+          <div class="user-detail">
+            <div class="user-wrap"><img src="https://www.sparxitsolutions.com/assets-style/images/brandon-brotsky.jpg"
+                alt="Brandon" class="user-pic">
+              <div><strong class="user-name">Brandon Brotsky</strong><span class="user-info">CTO / Co-founder</span>
+              </div>
+            </div>
+            <div class="company_logo"><img src="https://www.sparxitsolutions.com/sites/images/testi-2.svg" alt="Co">
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-box anim-fade d2"><strong class="speakers">"Working with Tekniko Global has been
+            incredible!</strong>
+          <p>Over six to seven months the team went above and beyond to execute our concept with precision. Their
+            support has been remarkable. I look forward to a long-term collaboration.</p>
+          <div class="user-detail">
+            <div class="user-wrap"><img src="https://www.sparxitsolutions.com/sites/images/philip-mwaniki.png"
+                alt="Philip" class="user-pic">
+              <div><strong class="user-name">Philip Mwaniki</strong><span class="user-info">Founder &amp; CEO</span>
+              </div>
+            </div>
+            <div class="company_logo"><img src="https://www.sparxitsolutions.com/sites/images/hycbase.svg"
+                alt="Hycbase"></div>
+          </div>
+        </div>
+        <div class="testimonial-box anim-fade d3"><strong class="speakers">"It has been delightful to work with Tekniko
+            Global.</strong>
+          <p>They offered quality solutions within my budget. I would highly recommend them if someone is looking to
+            hire a website design and development company. Thanks guys."</p>
+          <div class="user-detail">
+            <div class="user-wrap"><img src="https://www.sparxitsolutions.com/assets-style/images/bree_argetsinger.jpg"
+                alt="Bree" class="user-pic">
+              <div><strong class="user-name">Bree Argetsinger</strong><span class="user-info">Founder</span></div>
+            </div>
+            <div class="company_logo"><img src="https://www.sparxitsolutions.com/sites/images/testi-3.svg" alt="Co">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <div class="cta-wrapper">
+    <div class="container">
+      <div class="cta-wrap anim-fade">
+        <figure class="cta-img"><img src="https://www.sparxitsolutions.com/sites/images/chart.webp" alt="ROI"
+            width="408" height="265"></figure>
+        <div class="cta-txt">
+          <h3>Want to be among the top 1% of companies generating higher ROI from digital transformation?</h3>
+          <p>Generate more leads to outperform your competitors. Achieve your business goals faster with a 200% increase
+            in efficiency.</p>
+          <a href="#" class="primary-btn">Partner with us today</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== INDUSTRY ===== -->
+  <section class="industry-section">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title">Transforming Industries with Scalable and Secure Technology Solutions</h2>
+        <p class="section-subtitle">We deliver value-driven and customer-centric business transformation solutions
+          backed by cognitive tech across diverse verticals.</p>
+      </div>
+
+      <div class="industry-wrap industry-wrap-block">
+        <div class="industry-box anim-scale">
+          <span class="in-gb"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path
+                d="M11 2C6.03 2 2 6.03 2 11s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 4a2 2 0 110 4 2 2 0 010-4zm0 10.2a6.48 6.48 0 01-5.4-2.9c.027-1.8 3.6-2.79 5.4-2.79s5.373.99 5.4 2.79a6.48 6.48 0 01-5.4 2.9z"
+                fill="#2584f4" />
+            </svg></span>
+          <h3>Healthcare</h3>
+          <ul class="industry-listing">
+            <li><a href="#">Digital Consulting</a></li>
+            <li><a href="#">AI Agents for Healthcare</a></li>
+            <li><a href="#">Legacy Software Modernization</a></li>
+            <li><a href="#">HIPAA-Compliant Apps</a></li>
+          </ul>
+          <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span
+              class="tech-tag">React</span><span class="tech-tag">Node.js</span></div>
+        </div>
+        <div class="industry-box anim-scale d1">
+          <span class="in-gb"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <rect x="2" y="5" width="18" height="14" rx="2" stroke="#2584f4" stroke-width="2" />
+              <path d="M16 5V4a3 3 0 00-3-3h-2a3 3 0 00-3 3v1" stroke="#2584f4" stroke-width="2" />
+              <path d="M11 11v4M9 13h4" stroke="#2584f4" stroke-width="2" stroke-linecap="round" />
+            </svg></span>
+          <h3>Insurance</h3>
+          <ul class="industry-listing">
+            <li><a href="#">Health Insurance Software</a></li>
+            <li><a href="#">AI-Based Investment Advisory</a></li>
+            <li><a href="#">Insurance App Development</a></li>
+            <li><a href="#">FinTech App Solutions</a></li>
+          </ul>
+          <div class="tech-tags"><span class="tech-tag">Flutter</span><span class="tech-tag">JS</span><span
+              class="tech-tag">Python</span></div>
+        </div>
+        <div class="industry-box anim-scale d2">
+          <span class="in-gb"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M3 9h16M3 13h16M7 5v14M15 5v14" stroke="#2584f4" stroke-width="2" stroke-linecap="round" />
+              <rect x="2" y="5" width="18" height="14" rx="2" stroke="#2584f4" stroke-width="2" />
+            </svg></span>
+          <h3>Retail &amp; eCommerce</h3>
+          <ul class="industry-listing">
+            <li><a href="#">Product Information Management</a></li>
+            <li><a href="#">AI Chatbot for eCommerce</a></li>
+            <li><a href="#">eCommerce Web Solutions</a></li>
+            <li><a href="#">B2B &amp; B2C eCommerce Apps</a></li>
+          </ul>
+          <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span
+              class="tech-tag">Vue.js</span><span class="tech-tag">PHP</span></div>
+        </div>
+        <div class="industry-box anim-scale d3">
+          <span class="in-gb"><svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M4 4h6v6H4zM12 4h6v6h-6zM4 12h6v6H4zM12 12h6v6h-6z" stroke="#2584f4" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg></span>
+          <h3>Supply Chain</h3>
+          <ul class="industry-listing">
+            <li><a href="#">Full-scale ERP &amp; CRM</a></li>
+            <li><a href="#">BI &amp; Reporting Solutions</a></li>
+            <li><a href="#">Cloud Migration Services</a></li>
+          </ul>
+          <div class="tech-tags"><span class="tech-tag">Angular</span><span class="tech-tag">Java</span><span
+              class="tech-tag">AWS</span></div>
+        </div>
+      </div>
+
+      <!-- ===== EXPERTISE — 8 CARDS 4+4 ===== -->
+      <h2 class="expertise-head text-center">Providing Expertise Across a Range of Industries</h2>
+      <div class="expertise-industry">
+
+        <!-- Row 1 -->
+        <div class="industry-image anim-fade">
+          <img src="https://www.sparxitsolutions.com/sites/images/edtech.webp" alt="Education">
+          <h3>Education</h3>
+          <div class="industry-overlap"
+            style="background:linear-gradient(to bottom,rgba(67,47,72,.9),rgba(127,102,124,.9))">
+            <ul>
+              <li>Student Information System</li>
+              <li>E-Learning Portal</li>
+              <li>Custom LMS Development</li>
+            </ul>
+            <div class="tech-tags" style="margin-bottom:10px"><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">HTML</span><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">CSS</span><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">Flutter</span></div>
+            <span>Explore More &rarr;</span>
+          </div>
+        </div>
+
+        <div class="industry-image anim-fade d1">
+          <img src="https://www.sparxitsolutions.com/sites/images/real-estate.webp" alt="Real Estate">
+          <h3>Real Estate</h3>
+          <div class="industry-overlap"
+            style="background:linear-gradient(to bottom,rgba(37,132,244,.85),rgba(10,30,70,.9))">
+            <ul>
+              <li>Property Management &amp; Listing</li>
+              <li>CRM &amp; Lead Tracking</li>
+              <li>Property Booking Portal</li>
+            </ul>
+            <div class="tech-tags" style="margin-bottom:10px"><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">React</span><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">Node.js</span></div>
+            <span>Explore More &rarr;</span>
+          </div>
+        </div>
+
+        <div class="industry-image anim-fade d2">
+          <img src="https://www.sparxitsolutions.com/sites/images/manufacturing.webp" alt="Manufacturing">
+          <h3>Manufacturing</h3>
+          <div class="industry-overlap"
+            style="background:linear-gradient(to bottom,rgba(24,21,22,.88),rgba(74,157,255,.7))">
+            <ul>
+              <li>ERP Software</li>
+              <li>Production Planning Solution</li>
+              <li>Inventory Management</li>
+            </ul>
+            <div class="tech-tags" style="margin-bottom:10px"><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">JS</span><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">Python</span><span
+                class="tech-tag" style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">AWS</span></div>
+            <span>Explore More &rarr;</span>
+          </div>
+        </div>
+
+        <div class="industry-image anim-fade d3">
+          <img src="https://www.sparxitsolutions.com/sites/images/travel.webp" alt="Travel">
+          <h3>Travel</h3>
+          <div class="industry-overlap"
+            style="background:linear-gradient(to bottom,rgba(177,117,98,.88),rgba(37,132,244,.8))">
+            <ul>
+              <li>Booking &amp; Reservation System</li>
+              <li>Tour &amp; Itinerary Planning</li>
+              <li>CRM System</li>
+            </ul>
+            <div class="tech-tags" style="margin-bottom:10px"><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">Flutter</span><span
+                class="tech-tag" style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">CSS</span></div>
+            <span>Explore More &rarr;</span>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="industry-image anim-fade">
+          <img src="https://www.sparxitsolutions.com/sites/images/social-media.webp" alt="Social Media">
+          <h3>Social Media</h3>
+          <div class="industry-overlap"
+            style="background:linear-gradient(to bottom,rgba(74,157,255,.85),rgba(10,30,70,.9))">
+            <ul>
+              <li>Content Management Platform</li>
+              <li>Analytics &amp; Reporting</li>
+              <li>Community Engagement Tools</li>
+            </ul>
+            <div class="tech-tags" style="margin-bottom:10px"><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">React</span><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">GraphQL</span></div>
+            <span>Explore More &rarr;</span>
+          </div>
+        </div>
+
+        <div class="industry-image anim-fade d1">
+          <img src="https://www.sparxitsolutions.com/sites/images/automotive.webp" alt="Automotive">
+          <h3>Automotive</h3>
+          <div class="industry-overlap"
+            style="background:linear-gradient(to right,rgba(10,30,70,.88),rgba(37,132,244,.8))">
+            <ul>
+              <li>Inventory Management Software</li>
+              <li>Vehicle Production Tracking</li>
+              <li>Maintenance Scheduling</li>
+            </ul>
+            <div class="tech-tags" style="margin-bottom:10px"><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">JS</span><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">HTML</span><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">IoT</span></div>
+            <span>Explore More &rarr;</span>
+          </div>
+        </div>
+
+        <div class="industry-image anim-fade d2">
+          <img src="https://www.sparxitsolutions.com/sites/images/wellness.webp" alt="Wellness">
+          <h3>Wellness</h3>
+          <div class="industry-overlap"
+            style="background:linear-gradient(to bottom,rgba(37,132,244,.85),rgba(67,47,72,.88))">
+            <ul>
+              <li>Appointment &amp; Scheduling</li>
+              <li>Health &amp; Fitness Tracking</li>
+              <li>Telehealth Platform</li>
+            </ul>
+            <div class="tech-tags" style="margin-bottom:10px"><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">Flutter</span><span
+                class="tech-tag" style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">CSS</span></div>
+            <span>Explore More &rarr;</span>
+          </div>
+        </div>
+
+        <div class="industry-image anim-fade d3">
+          <img src="https://www.sparxitsolutions.com/sites/images/agriculture.webp" alt="Agriculture">
+          <h3>Agriculture</h3>
+          <div class="industry-overlap"
+            style="background:linear-gradient(to bottom,rgba(20,80,40,.88),rgba(74,157,255,.75))">
+            <ul>
+              <li>Crop &amp; Farm Operations Management</li>
+              <li>IoT &amp; Precision Agriculture</li>
+              <li>Land &amp; Resource Management</li>
+            </ul>
+            <div class="tech-tags" style="margin-bottom:10px"><span class="tech-tag"
+                style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">Python</span><span
+                class="tech-tag" style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">IoT</span><span
+                class="tech-tag" style="border-color:#fff;color:#fff;background:rgba(255,255,255,.15)">ML</span></div>
+            <span>Explore More &rarr;</span>
+          </div>
+        </div>
+
+      </div><!-- /expertise-industry -->
+    </div>
+  </section>
+
+  <!-- ===== ABOUT STATS ===== -->
+  <section class="about-section">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title">Delivering Measurable Outcomes that Supercharge Your Business</h2>
+      </div>
+      <div class="about-wrap">
+        <div class="about-box anim-scale"><strong class="about-info" id="c1">0+</strong>
+          <p>Years of Delivering Excellence</p>
+        </div>
+        <div class="about-box anim-scale d1"><strong class="about-info" id="c2">0%</strong>
+          <p>Average Increase in Conversion Rates</p>
+        </div>
+        <div class="about-box anim-scale d2"><strong class="about-info" id="c3">0+</strong>
+          <p>Years of Average Partnership Length</p>
+        </div>
+        <div class="about-box anim-scale d3"><strong class="about-info" id="c4">0+</strong>
+          <p>Experts with Decade-long Domain Experience</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="exciting-section">
+    <div class="container">
+      <div class="exciting-head">
+        <div>
+          <h2>Our Future-Ready Products Designed for Business Excellence</h2>
+          <p>Our AI-powered digital products are custom-built to address key challenges, enhance productivity, and
+            streamline operations.</p>
+        </div>
+        <a href="#" class="text-link">Let's work together</a>
+      </div>
+      <div class="exciting-block">
+        <div class="exciting-box">
+          <div class="exciting-sec"><img src="https://www.sparxitsolutions.com/sites/images/spx-commerce.webp"
+              alt="eCommerce" width="251" height="70"></div>
+          <h3>Build eCommerce Storefronts with MAC-based Architecture</h3>
+          <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span
+              class="tech-tag">React</span></div>
+        </div>
+        <div class="exciting-box">
+          <div class="exciting-sec"><img src="https://www.sparxitsolutions.com/sites/images/open-chatbot.webp"
+              alt="Chatbot" width="138" height="85"></div>
+          <h3>Automate Conversations and Boost Conversions</h3>
+          <div class="tech-tags"><span class="tech-tag">JS</span><span class="tech-tag">Node.js</span><span
+              class="tech-tag">AI</span></div>
+        </div>
+        <div class="exciting-box">
+          <div class="exciting-sec"><img src="https://www.sparxitsolutions.com/sites/images/abcde.webp" alt="Task App"
+              width="104" height="104"></div>
+          <h3>All-Inclusive To-do List App to Simplify Everyday Tasks</h3>
+          <div class="tech-tags"><span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EVENTS ===== -->
+  <section class="event-section">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title">Our Board of Featured Events</h2>
+        <p class="section-subtitle">Discover the essence of our recent events, showcasing vibrant moments and
+          connections that drive our mission forward.</p>
+        <a href="#" class="text-link" style="justify-content:center;margin-top:8px">View all events</a>
+      </div>
+      <div class="event-wrap">
+        <div class="event-box anim-fade">
+          <div class="event-block">
+            <figure class="event-gallery"><img src="https://www.sparxitsolutions.com/sites/images/gitex-2025.png"
+                alt="GITEX" width="410" height="176"></figure>
+            <div class="event-content"><strong class="event-title">GITEX Global 2025</strong>
+              <ul class="event-location">
+                <li>&#128197; October 13–17, 2025</li>
+                <li>&#128205; Dubai, UAE</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="event-box anim-fade d1">
+          <div class="event-block">
+            <figure class="event-gallery"><img src="https://www.sparxitsolutions.com/sites/images/japan-event.webp"
+                alt="Japan IT Week" width="410" height="176"></figure>
+            <div class="event-content"><strong class="event-title">Japan IT Week Spring 2024</strong>
+              <ul class="event-location">
+                <li>&#128197; April 24–26, 2024</li>
+                <li>&#128205; Tokyo, Japan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="event-box anim-fade d2">
+          <div class="event-block">
+            <figure class="event-gallery"><img src="https://www.sparxitsolutions.com/sites/images/ces-image.webp"
+                alt="CES" width="410" height="176"></figure>
+            <div class="event-content"><strong class="event-title">CES 2024</strong>
+              <ul class="event-location">
+                <li>&#128197; January 9–12, 2024</li>
+                <li>&#128205; Las Vegas, USA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOG ===== -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="blog-head text-center">
+        <h2 class="blog-title">Latest Insights</h2>
+        <p class="blog-subtitle">Stay informed with our latest blogs, offering valuable knowledge and trends to empower
+          your business decisions.</p>
+      </div>
+      <div class="blog-wrap">
+        <div class="blog-sec">
+          <figure class="blog-thumbnail"><img src="https://www.sparxitsolutions.com/sites/images/blog-thumbnail.avif"
+              alt="Blog" width="410" height="202"></figure>
+          <div class="blog-content"><span class="time-read">11 mins read</span>
+            <div class="feed-link"><a href="#">Top 10 B2B Ecommerce Development Agencies for 2026</a></div><a href="#"
+              class="text-link">Read more</a>
+          </div>
+        </div>
+        <div class="blog-sec blog-sec2">
+          <div class="blog-content"><span class="time-read">12 mins read</span>
+            <div class="feed-link"><a href="#">A Complete Guide on B2B Marketplace Development</a></div><a href="#"
+              class="text-link">Read more</a>
+          </div>
+          <div class="blog-content"><span class="time-read">14 mins read</span>
+            <div class="feed-link"><a href="#">How Ecommerce Microservice Architecture Helps Businesses Scale Faster</a>
+            </div><a href="#" class="text-link">Read more</a>
+          </div>
+        </div>
+        <div class="blog-sec">
+          <div class="blog-content"><span class="time-read">19 mins read</span>
+            <div class="feed-link"><a href="#">Everything You Need to Know About Rental Marketplace Development in
+                2026</a></div><a href="#" class="text-link">Read more</a>
+          </div>
+          <div class="blog-content"><span class="time-read">13 mins read</span>
+            <div class="feed-link"><a href="#">Step-by-Step Guide for On-Demand Alcohol Delivery App Development</a>
+            </div><a href="#" class="text-link">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="https://www.teknikoglobal.com/"><img
+              src="https://www.teknikoglobal.com/public/assets/image/img/brand_logo.webp" alt="Tekniko Global"
+              class="footer-logo-img"></a>
+          <p class="footer-desc">Tekniko Global delivers digital transformation through software modernization, AI,
+            cloud solutions, cybersecurity, and data analytics.</p>
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg></a>
+            <a href="#" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+              </svg></a>
+            <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Digital Transformation</a></li>
+            <li><a href="#">AI Development</a></li>
+            <li><a href="#">Cloud &amp; DevOps</a></li>
+            <li><a href="#">Cybersecurity</a></li>
+            <li><a href="#">Data Analytics</a></li>
+            <li><a href="#">Product Engineering</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Industries</h4>
+          <ul>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">BFSI</a></li>
+            <li><a href="#">Retail &amp; eCommerce</a></li>
+            <li><a href="#">Manufacturing</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Travel</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Leadership</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@teknikoglobal.com">info@teknikoglobal.com</a></li>
+            <li><a href="https://www.teknikoglobal.com">www.teknikoglobal.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="copy-right">&copy; 2025 Tekniko Global. All rights reserved.</p>
+        <div class="terms-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a><a href="#">Sitemap</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== STICKY HEADER ===== */
+    window.addEventListener('scroll', function () {
+      document.getElementById('header').classList.toggle('sticky', window.scrollY > 50);
+    });
+
+    /* ===== MOBILE MENU ===== */
+    document.getElementById('menuToggle').addEventListener('click', function () {
+      this.classList.toggle('active');
+      document.getElementById('mainNav').classList.toggle('effect');
+      document.body.classList.toggle('menu-open');
+    });
+    document.querySelectorAll('.has-drop > .main_link').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        if (window.innerWidth < 1199) {
+          e.preventDefault();
+          var d = this.parentElement.querySelector('.mob-dropdown');
+          if (d) d.classList.toggle('open');
+        }
+      });
+    });
+
+    /* ===== BANNER SLIDER ===== */
+    var cur = 0, total = 6, timer, paused = false;
+    var slides = document.querySelectorAll('.banner-slide');
+    var thumbs = document.querySelectorAll('.thumbnail');
+    var dots = document.querySelectorAll('.slider-dot');
+
+    function goTo(n) {
+      slides[cur].classList.remove('active');
+      thumbs[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      cur = (n % total + total) % total;
+      slides[cur].classList.add('active');
+      thumbs[cur].classList.add('active');
+      dots[cur].classList.add('active');
+      clearInterval(timer);
+      if (!paused) timer = setInterval(function () { goTo(cur + 1) }, 6000);
+    }
+
+    timer = setInterval(function () { goTo(cur + 1) }, 6000);
+
+    var b = document.querySelector('.banner');
+    b.addEventListener('mouseenter', function () { paused = true; clearInterval(timer) });
+    b.addEventListener('mouseleave', function () { paused = false; timer = setInterval(function () { goTo(cur + 1) }, 6000) });
+
+    /* Touch swipe */
+    var tx = 0;
+    b.addEventListener('touchstart', function (e) { tx = e.changedTouches[0].screenX }, { passive: true });
+    b.addEventListener('touchend', function (e) {
+      var d = tx - e.changedTouches[0].screenX;
+      if (Math.abs(d) > 50) { goTo(d > 0 ? cur + 1 : cur - 1) }
+    }, { passive: true });
+
+    /* ===== INTERSECTION OBSERVER ===== */
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.anim-fade,.anim-scale').forEach(function (el) { io.observe(el) });
+
+    /* ===== COUNTER ===== */
+    var cnts = [
+      { el: document.getElementById('c1'), t: 18, s: '+' },
+      { el: document.getElementById('c2'), t: 61, s: '%' },
+      { el: document.getElementById('c3'), t: 5, s: '+' },
+      { el: document.getElementById('c4'), t: 85, s: '+' }
+    ];
+    var done = false;
+    var cio = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting && !done) {
+        done = true;
+        cnts.forEach(function (c) {
+          var v = 0, step = Math.max(1, Math.ceil(c.t / 55));
+          c.el.parentElement.classList.add('in');
+          var t = setInterval(function () {
+            v += step; if (v >= c.t) { v = c.t; clearInterval(t) }
+            c.el.textContent = v + c.s;
+          }, 28);
+        });
+      }
+    }, { threshold: 0.3 });
+    var as = document.querySelector('.about-section');
+    if (as) cio.observe(as);
+  </script>
+  <script>
+    const boxes = document.querySelectorAll(".technologies-box");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+
+    boxes.forEach(box => {
+      observer.observe(box);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+</body>
+
+</html>

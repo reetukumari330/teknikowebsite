@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Healthcare IT Services</title>
+    <link rel="canonical" href="https://www.teknikoglobal.com/" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sora: ['Sora', 'sans-serif'],
+                        dm: ['DM Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#1a6bef',
+                            light: '#4a9dff',
+                            dark: '#0b1c39',
+                        }
+                    },
+                    keyframes: {
+                        fadeUp: { '0%': { opacity: 0, transform: 'translateY(40px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+                        slideIn: { '0%': { opacity: 0, transform: 'translateX(-30px)' }, '100%': { opacity: 1, transform: 'translateX(0)' } },
+                    },
+                    animation: {
+                        fadeUp: 'fadeUp 0.8s ease forwards',
+                        slideIn: 'slideIn 0.6s ease forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-sora {
+            font-family: 'Sora', sans-serif;
+        }
+
+        /* HEADER */
+        .site-header {
+            background: #fff;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-link {
+            color: #333;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-link:hover {
+            background: #f0f6ff;
+            color: #1a6bef;
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1a6bef;
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-contact:hover {
+            background: #0b1c39;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: #333;
+            border-radius: 2px;
+            display: block;
+        }
+
+        @media(max-width:991px) {
+
+            .main-nav,
+            .nav-cta {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        /* MEGA MENU */
+        .mega-wrap {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            background: #fff;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+            border-top: 1px solid #eee;
+        }
+
+        .mega-wrap.open {
+            display: flex;
+        }
+
+        .mega-sidebar {
+            width: 240px;
+            background: #f8faff;
+            border-right: 1px solid #e8eef8;
+            padding: 20px 0;
+            flex-shrink: 0;
+        }
+
+        .sidebar-title {
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            padding: 0 20px 12px;
+        }
+
+        .sidebar-tab {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            color: #444;
+            transition: 0.2s;
+        }
+
+        .sidebar-tab:hover,
+        .sidebar-tab.active {
+            background: #e8f0fe;
+            color: #1a6bef;
+        }
+
+        .sidebar-tab .tab-icon-wrap {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-tab svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .chev-right {
+            margin-left: auto;
+        }
+
+        .mega-content {
+            flex: 1;
+            padding: 28px 32px;
+        }
+
+        .mega-panel {
+            display: none;
+        }
+
+        .mega-panel.active {
+            display: block;
+        }
+
+        .panel-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #888;
+            margin-bottom: 16px;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+        }
+
+        .item-link {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .item-link:hover {
+            background: #f0f6ff;
+        }
+
+        .item-icon {
+            width: 36px;
+            height: 36px;
+            background: #e8f0fe;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .item-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: #1a6bef;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .item-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+
+        .item-desc {
+            font-size: 12px;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 98;
+        }
+
+        .overlay.show {
+            display: block;
+        }
+
+        /* MOBILE NAV */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #fff;
+            z-index: 97;
+            overflow-y: auto;
+            padding: 16px;
+        }
+
+        .mobile-nav.open {
+            display: block;
+        }
+
+        .mob-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            color: #333;
+        }
+
+        .mob-sub {
+            display: none;
+            padding: 8px 0 8px 12px;
+        }
+
+        .mob-sub.open {
+            display: block;
+        }
+
+        .mob-sub a {
+            display: block;
+            padding: 8px 4px;
+            font-size: 14px;
+            color: #555;
+            text-decoration: none;
+        }
+
+        .mob-sub a:hover {
+            color: #1a6bef;
+        }
+
+        .sub-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            padding: 8px 4px 4px;
+            font-weight: 700;
+        }
+
+        .mob-cta-wrap a {
+            display: block;
+            text-align: center;
+            background: #1a6bef;
+            color: #fff;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: 700;
+            margin-top: 16px;
+            text-decoration: none;
+        }
+
+        /* HERO */
+        .hero-section {
+            position: relative;
+            min-height: 70vh;
+            background: url('./images/baner2.jpg') no-repeat center right / cover;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 60px 0;
+        }
+
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 66%;
+            height: 100%;
+            background: linear-gradient(135deg, hsl(0, 0%, 8%), #4a9dff);
+            clip-path: polygon(0 0, 85% 0, 65% 100%, 0% 100%);
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        @media(max-width:992px) {
+            .hero-section::before {
+                width: 80%;
+                clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+            }
+        }
+
+        @media(max-width:768px) {
+            .hero-section {
+                min-height: auto;
+                padding: 60px 20px;
+                text-align: center;
+            }
+
+            .hero-section::before {
+                width: 100%;
+                clip-path: none;
+                opacity: 0.85;
+            }
+        }
+
+        /* CASE STUDY CARDS */
+        .cs-card {
+            background: #fff;
+            border-radius: 32px;
+            overflow: hidden;
+            margin-bottom: 60px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.4s ease;
+        }
+
+        .cs-card:hover {
+            box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.12), 0 18px 36px -18px rgba(0, 0, 0, 0.15);
+        }
+
+        .cs-img-wrap {
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cs-img-wrap img {
+            width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+            transition: transform 0.6s ease;
+        }
+
+        .cs-card:hover .cs-img-wrap img {
+            transform: scale(1.03);
+        }
+
+        .view-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn:hover {
+            color: #1a6bef;
+            border-color: #1a6bef;
+            gap: 12px;
+        }
+
+        @media(max-width:767px) {
+            .cs-card {
+                border-radius: 24px;
+            }
+
+            .cs-img-wrap {
+                padding: 20px;
+            }
+
+            .reverse-mobile {
+                flex-direction: column-reverse;
+            }
+        }
+
+        /* FEATURE CARDS */
+        .feature-card {
+            border: 1px solid #e4e8f0;
+            border-radius: 16px;
+            padding: 28px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(37, 132, 244, 0.2);
+        }
+
+        .feature-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 1.5px;
+            background: linear-gradient(120deg, transparent, #2584f4, transparent);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover .icon-box {
+            transform: rotate(8deg) scale(1.1);
+        }
+
+        .icon-box {
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #2584f4, #6fb1ff);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            transition: 0.4s;
+        }
+
+        /* APP CARDS */
+        .app-card {
+            background: #fff;
+            border: 1px solid #e4e8f0;
+            border-radius: 16px;
+            padding: 28px 24px;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #1a6bef, #4a9dff);
+            border-radius: 16px 0 0 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(26, 107, 239, 0.12);
+        }
+
+        .app-card:hover::before {
+            opacity: 1;
+        }
+
+        .app-icon {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, #1a6bef, #4a9dff);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .app-card:hover .app-icon {
+            transform: rotate(6deg) scale(1.1);
+        }
+
+        /* TAB BUTTONS */
+        .tab-btn {
+            display: inline-block;
+            padding: 10px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #555;
+            background: #f1f3f5;
+            border: 1.5px solid transparent;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            background: #e2ecff;
+            color: #1a6bef;
+            border-color: #1a6bef;
+        }
+
+        .tab-btn.active {
+            background: #1a6bef;
+            color: #fff;
+            border-color: #1a6bef;
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* BTN TALK */
+        .btn-talk {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 30px;
+            padding: 12px 28px;
+            transition: 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-talk:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* FADE UP */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="site-header">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="https://www.teknikoglobal.com/">
+                    <img src="https://www.teknikoglobal.com/public/assets/image/img/brand_logo.webp"
+                        alt="Tekniko Global" class="h-10" />
+                </a>
+                <nav class="main-nav">
+                    <ul class="flex items-center gap-1 list-none m-0 p-0">
+                        <li data-menu="services"><span class="nav-link">Services <svg class="inline w-4 h-4"
+                                    viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg></span></li>
+                        <li data-menu="industries"><span class="nav-link">Industries <svg class="inline w-4 h-4"
+                                    viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg></span></li>
+                        <li><a href="https://www.teknikoglobal.com/portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="https://www.teknikoglobal.com/blog" class="nav-link">Blog</a></li>
+                        <li data-menu="company"><span class="nav-link">Company <svg class="inline w-4 h-4"
+                                    viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+                                    <polyline points="6 9 12 15 18 9" />
+                                </svg></span></li>
+                    </ul>
+                </nav>
+                <div class="nav-cta"><a href="https://www.teknikoglobal.com/contact" class="btn-contact">Contact Us <svg
+                            class="w-4 h-4" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg></a></div>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ═══ MEGA MENUS (same structure, Tailwind doesn't affect these) ═══ -->
+    <div class="mega-wrap" id="menu-services">
+        <div class="mega-sidebar">
+            <div class="sidebar-title">Services</div>
+            <div class="sidebar-tab active" data-panel="dev">
+                <div class="tab-icon-wrap"><svg viewBox="0 0 24 24">
+                        <polyline points="16 18 22 12 16 6" />
+                        <polyline points="8 6 2 12 8 18" />
+                    </svg></div>Development<span class="chev-right"><svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg></span>
+            </div>
+            <div class="sidebar-tab" data-panel="mobile">
+                <div class="tab-icon-wrap"><svg viewBox="0 0 24 24">
+                        <rect x="5" y="2" width="14" height="20" rx="2" />
+                    </svg></div>Mobile Apps<span class="chev-right"><svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg></span>
+            </div>
+            <div class="sidebar-tab" data-panel="ai">
+                <div class="tab-icon-wrap"><svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3" />
+                    </svg></div>AI &amp; Data<span class="chev-right"><svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg></span>
+            </div>
+            <div class="sidebar-tab" data-panel="cloud">
+                <div class="tab-icon-wrap"><svg viewBox="0 0 24 24">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                    </svg></div>Cloud &amp; DevOps<span class="chev-right"><svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg></span>
+            </div>
+            <div class="sidebar-tab" data-panel="design">
+                <div class="tab-icon-wrap"><svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3" />
+                    </svg></div>Design<span class="chev-right"><svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg></span>
+            </div>
+            <div class="sidebar-tab" data-panel="hire">
+                <div class="tab-icon-wrap"><svg viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                    </svg></div>Hire Developers<span class="chev-right"><svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg></span>
+            </div>
+        </div>
+        <div class="mega-content">
+            <div class="mega-panel active" id="panel-dev">
+                <p class="panel-label">Core Development Services</p>
+                <div class="items-grid">
+                    <a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M3 9h18M9 21V9" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Web Development</div>
+                            <div class="item-desc">Scalable, high-performance websites.</div>
+                        </div>
+                    </a>
+                    <a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Chatbot Development</div>
+                            <div class="item-desc">Cognitive chatbots for customer support.</div>
+                        </div>
+                    </a>
+                    <a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">ERP Development</div>
+                            <div class="item-desc">End-to-end ERP solutions.</div>
+                        </div>
+                    </a>
+                    <a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Digital Transformation</div>
+                            <div class="item-desc">Digital-first strategies.</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="mega-panel" id="panel-mobile">
+                <p class="panel-label">Mobile App Development</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <rect x="5" y="2" width="14" height="20" rx="2" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Mobile App Development</div>
+                            <div class="item-desc">Future-proof apps.</div>
+                        </div>
+                    </a></div>
+            </div>
+            <div class="mega-panel" id="panel-ai">
+                <p class="panel-label">AI &amp; Data Solutions</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">AI Development</div>
+                            <div class="item-desc">Custom AI solutions.</div>
+                        </div>
+                    </a></div>
+            </div>
+            <div class="mega-panel" id="panel-cloud">
+                <p class="panel-label">Cloud &amp; DevOps</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Cloud Computing</div>
+                            <div class="item-desc">Scalable cloud solutions.</div>
+                        </div>
+                    </a></div>
+            </div>
+            <div class="mega-panel" id="panel-design">
+                <p class="panel-label">Design &amp; Marketing</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">UI/UX Designing</div>
+                            <div class="item-desc">Stunning user interfaces.</div>
+                        </div>
+                    </a></div>
+            </div>
+            <div class="mega-panel" id="panel-hire">
+                <p class="panel-label">Hire Top 1% Talent</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Hire Developers</div>
+                            <div class="item-desc">Expert developers available.</div>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mega-wrap" id="menu-industries">
+        <div class="mega-sidebar">
+            <div class="sidebar-title">Industries</div>
+            <div class="sidebar-tab active" data-panel="ind-consumer">Consumer &amp; Retail</div>
+            <div class="sidebar-tab" data-panel="ind-enterprise">Enterprise</div>
+            <div class="sidebar-tab" data-panel="ind-lifestyle">Lifestyle &amp; Services</div>
+        </div>
+        <div class="mega-content">
+            <div class="mega-panel active" id="panel-ind-consumer">
+                <p class="panel-label">Consumer &amp; Retail</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Retail &amp; eCommerce</div>
+                            <div class="item-desc">Scalable platforms for your store.</div>
+                        </div>
+                    </a></div>
+            </div>
+            <div class="mega-panel" id="panel-ind-enterprise">
+                <p class="panel-label">Enterprise Industries</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Healthcare</div>
+                            <div class="item-desc">Digital health solutions.</div>
+                        </div>
+                    </a></div>
+            </div>
+            <div class="mega-panel" id="panel-ind-lifestyle">
+                <p class="panel-label">Lifestyle &amp; Services</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Education</div>
+                            <div class="item-desc">eLearning apps &amp; LMS.</div>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mega-wrap" id="menu-company">
+        <div class="mega-sidebar">
+            <div class="sidebar-title">Company</div>
+            <div class="sidebar-tab active" data-panel="co-about">About</div>
+            <div class="sidebar-tab" data-panel="co-careers">Careers</div>
+        </div>
+        <div class="mega-content">
+            <div class="mega-panel active" id="panel-co-about">
+                <p class="panel-label">Who We Are</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M20 21a8 8 0 1 0-16 0" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">About Us</div>
+                            <div class="item-desc">Our mission and values.</div>
+                        </div>
+                    </a></div>
+            </div>
+            <div class="mega-panel" id="panel-co-careers">
+                <p class="panel-label">Join Our Team</p>
+                <div class="items-grid"><a class="item-link" href="#">
+                        <div class="item-icon"><svg viewBox="0 0 24 24">
+                                <rect x="2" y="7" width="20" height="14" rx="2" />
+                            </svg></div>
+                        <div class="item-body">
+                            <div class="item-title">Open Positions</div>
+                            <div class="item-desc">Explore current openings.</div>
+                        </div>
+                    </a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ MOBILE NAV ═══ -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mob-item">
+            <div class="mob-trigger">Services <svg class="inline w-4 h-4" viewBox="0 0 24 24" stroke="currentColor"
+                    fill="none" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg></div>
+            <div class="mob-sub">
+                <div class="sub-label">Development</div><a href="#">Web Development</a><a href="#">CRM Development</a>
+                <div class="sub-label">Mobile Apps</div><a href="#">Mobile App Development</a><a href="#">iOS /
+                    Android</a>
+            </div>
+        </div>
+        <div class="mob-item">
+            <div class="mob-trigger">Industries <svg class="inline w-4 h-4" viewBox="0 0 24 24" stroke="currentColor"
+                    fill="none" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg></div>
+            <div class="mob-sub"><a href="#">Healthcare</a><a href="#">Retail &amp; eCommerce</a><a
+                    href="#">Education</a></div>
+        </div>
+        <div class="mob-item"><a class="mob-trigger" href="https://www.teknikoglobal.com/portfolio">Portfolio</a></div>
+        <div class="mob-item"><a class="mob-trigger" href="https://www.teknikoglobal.com/blog">Blog</a></div>
+        <div class="mob-item">
+            <div class="mob-trigger">Company <svg class="inline w-4 h-4" viewBox="0 0 24 24" stroke="currentColor"
+                    fill="none" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg></div>
+            <div class="mob-sub"><a href="#">About Us</a><a href="#">Careers</a></div>
+        </div>
+        <div class="mob-cta-wrap"><a href="https://www.teknikoglobal.com/contact">Contact Us →</a></div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero-section">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="flex items-center">
+                <div class="relative z-10 max-w-xl text-white">
+                    <h1 class="font-sora font-bold text-4xl md:text-5xl leading-tight mb-6">
+                        Healthcare IT Services and Solutions
+                    </h1>
+                    <p class="text-lg leading-relaxed text-white/90 mb-12">
+                        We deliver interoperable, compliance-centric Healthcare IT Services that modernize care
+                        delivery, protect patient data, streamline operations, and optimize digital infrastructure.
+                    </p>
+                    <a href="#" class="btn-talk">
+                        Talk to Healthcare IT Experts
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ CASE STUDIES ═══ -->
+    <div class="max-w-7xl mx-auto px-6 py-16 mt-8">
+        <section class="text-center mb-12">
+            <h2 class="font-sora font-bold text-3xl md:text-4xl text-[#0b1c39] mb-4">Latest Healthcare IT Projects We've
+                Delivered</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">A snapshot of recent healthcare IT
+                solutions where our technical precision aligns with clinical necessity to solve complex challenges.</p>
+        </section>
+
+        <!-- Card 1 -->
+        <div class="cs-card">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="cs-img-wrap w-full md:w-1/2">
+                    <img src="./images/Xcdule (1).png" alt="Xcdule App" />
+                </div>
+                <div class="w-full md:w-1/2 p-8 md:p-16">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm"
+                            style="background:#c62828">X</div>
+                        <span class="font-sora font-semibold text-lg text-gray-800">Xcdule</span>
+                    </div>
+                    <h2 class="font-sora font-extrabold text-2xl md:text-3xl text-[#1a1a1a] leading-tight mb-5">Built a
+                        Socially Connected Healthcare App for Personalized Patient Engagement</h2>
+                    <p class="text-gray-500 text-base leading-relaxed mb-8">We engineered a high-engagement ecosystem
+                        that boosted user retention by 40%. By integrating social networking with clinical profile
+                        management, we simplified patient data sharing and increased daily active user interaction.</p>
+                    <a href="#" class="view-btn">View Case Study <svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 (Reversed) -->
+        <div class="cs-card">
+            <div class="flex flex-col md:flex-row-reverse items-center reverse-mobile">
+                <div class="cs-img-wrap w-full md:w-1/2">
+                    <img src="./images/The-Best-Healthcare-App-Development-Company-in-India-Tekniko-Global.webp"
+                        alt="Healthcare App" />
+                </div>
+                <div class="w-full md:w-1/2 p-8 md:p-16">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm"
+                            style="background:#f4a030">H</div>
+                        <span class="font-sora font-semibold text-lg text-gray-800">HealthCare</span>
+                    </div>
+                    <h2 class="font-sora font-extrabold text-2xl md:text-3xl text-[#1a1a1a] leading-tight mb-5">
+                        Cross-Platform Telehealth Deployment with Virtual Therapy Consultations</h2>
+                    <p class="text-gray-500 text-base leading-relaxed mb-8">Our React Native solution reduced patient
+                        wait times by 35% through seamless virtual therapy workflows. The optimized infrastructure
+                        increased monthly consultations while maintaining confidentiality for critical remote sessions.
+                    </p>
+                    <a href="#" class="view-btn">View Case Study <svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ NOTABLE FEATURES ═══ -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="font-sora font-bold text-3xl text-[#0b1c39] mb-3">Notable Features of our Healthcare App</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Tailored solutions designed to meet patient needs and
+                    streamline medical workflows.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="feature-card fade-up">
+                    <div class="icon-box"><i class="bi bi-person-plus-fill"></i></div>
+                    <h5 class="font-sora font-semibold text-xl mb-2">Quick Registration</h5>
+                    <p class="text-gray-500">Skip the complex forms. Join in seconds with our streamlined onboarding.
+                    </p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="icon-box"><i class="bi bi-person-badge"></i></div>
+                    <h5 class="font-sora font-semibold text-xl mb-2">Profile Management</h5>
+                    <p class="text-gray-500">Manage your health profile easily with user-friendly tools.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="icon-box"><i class="bi bi-search"></i></div>
+                    <h5 class="font-sora font-semibold text-xl mb-2">Physician Discovery</h5>
+                    <p class="text-gray-500">Find doctors using smart filters and specialization search.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="icon-box"><i class="bi bi-bookmark-heart"></i></div>
+                    <h5 class="font-sora font-semibold text-xl mb-2">Smart Shortlisting</h5>
+                    <p class="text-gray-500">Save your preferred doctors instantly.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="icon-box"><i class="bi bi-calendar-check"></i></div>
+                    <h5 class="font-sora font-semibold text-xl mb-2">Appointment Manager</h5>
+                    <p class="text-gray-500">Book appointments with real-time availability.</p>
+                </div>
+                <div class="feature-card fade-up">
+                    <div class="icon-box"><i class="bi bi-bell-fill"></i></div>
+                    <h5 class="font-sora font-semibold text-xl mb-2">Healthcare Reminders</h5>
+                    <p class="text-gray-500">Get alerts for medications and health tasks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ APP ECOSYSTEM ═══ -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="font-sora font-bold text-3xl text-[#0b1c39] mb-6">App Ecosystem Features</h2>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button class="tab-btn active" data-tab="patient">Patient App</button>
+                    <button class="tab-btn" data-tab="doctor">Doctor App</button>
+                    <button class="tab-btn" data-tab="admin">Admin Panel</button>
+                </div>
+            </div>
+
+            <!-- Patient Tab -->
+            <div class="tab-pane active" id="tab-patient">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-person-plus"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Registration &amp; Appointment
+                        </h5>
+                        <p class="text-sm text-gray-500">Create profiles, manage medical history, and book appointments
+                            easily.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-camera-video"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Telemedicine</h5>
+                        <p class="text-sm text-gray-500">Video, audio, and chat consultation with doctors.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-file-earmark-medical"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">E-Prescription</h5>
+                        <p class="text-sm text-gray-500">Digital prescriptions integrated with pharmacies.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-shield-lock"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">EHR</h5>
+                        <p class="text-sm text-gray-500">Secure blockchain-based health records.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-alarm"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Medication Reminder</h5>
+                        <p class="text-sm text-gray-500">Alerts via SMS, calls &amp; notifications.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-truck"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Ambulance Service</h5>
+                        <p class="text-sm text-gray-500">One-click emergency ambulance booking.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-geo-alt"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Hospital Wayfinder</h5>
+                        <p class="text-sm text-gray-500">Easy indoor navigation system.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-credit-card"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Payment &amp; Billing</h5>
+                        <p class="text-sm text-gray-500">Multiple payment options with billing reference.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-star"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Ratings</h5>
+                        <p class="text-sm text-gray-500">Feedback and doctor reviews system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doctor Tab -->
+            <div class="tab-pane" id="tab-doctor">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-person-check"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Doctor Onboarding</h5>
+                        <p class="text-sm text-gray-500">Manage and accept appointment requests.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-calendar-check"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Appointment Scheduler</h5>
+                        <p class="text-sm text-gray-500">Organize appointments efficiently.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-speedometer2"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Patients Dashboard</h5>
+                        <p class="text-sm text-gray-500">Access records for better diagnosis.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-images"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Clinic Photo Capture</h5>
+                        <p class="text-sm text-gray-500">Track treatment visually.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-graph-up"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Decision Support</h5>
+                        <p class="text-sm text-gray-500">Clinical tools &amp; reports for accuracy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Tab -->
+            <div class="tab-pane" id="tab-admin">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-people"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Patient Management</h5>
+                        <p class="text-sm text-gray-500">Manage patient data and appointments.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-person-badge"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Doctor Management</h5>
+                        <p class="text-sm text-gray-500">Approve doctors and manage schedules.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-cash-stack"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Billing Management</h5>
+                        <p class="text-sm text-gray-500">Track revenue and financial reports.</p>
+                    </div>
+                    <div class="app-card">
+                        <div class="app-icon"><i class="bi bi-folder"></i></div>
+                        <h5 class="font-sora font-bold text-base text-[#1a1a2e] mb-2">Documentation</h5>
+                        <p class="text-sm text-gray-500">Manage medical and insurance records.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // ── MEGA MENU ──
+        const navItems = document.querySelectorAll('.nav-item[data-menu]');
+        const megaWraps = document.querySelectorAll('.mega-wrap');
+        const overlay = document.getElementById('overlay');
+        let activeMenu = null;
+
+        function closeAll() {
+            megaWraps.forEach(m => m.classList.remove('open'));
+            overlay.classList.remove('show');
+            activeMenu = null;
+        }
+
+        navItems.forEach(item => {
+            item.addEventListener('click', e => {
+                e.stopPropagation();
+                const menuId = 'menu-' + item.dataset.menu;
+                const target = document.getElementById(menuId);
+                if (activeMenu === menuId) { closeAll(); return; }
+                closeAll();
+                target.classList.add('open');
+                overlay.classList.add('show');
+                activeMenu = menuId;
+            });
+        });
+
+        overlay.addEventListener('click', closeAll);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+
+        // ── SIDEBAR TABS ──
+        document.querySelectorAll('.sidebar-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const wrap = tab.closest('.mega-wrap');
+                wrap.querySelectorAll('.sidebar-tab').forEach(t => t.classList.remove('active'));
+                wrap.querySelectorAll('.mega-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                const panel = wrap.querySelector('#panel-' + tab.dataset.panel);
+                if (panel) panel.classList.add('active');
+            });
+        });
+
+        // ── HAMBURGER ──
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+
+        // ── MOBILE ACCORDIONS ──
+        document.querySelectorAll('.mob-trigger').forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const sub = trigger.nextElementSibling;
+                if (sub && sub.classList.contains('mob-sub')) sub.classList.toggle('open');
+            });
+        });
+
+        // ── APP TABS ──
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+            });
+        });
+
+        // ── FADE UP SCROLL ──
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

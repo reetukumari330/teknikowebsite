@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development – Tekniko Global</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --blue: #2563eb;
+            --blue-light: #3b82f6;
+            --blue-pale: #eff6ff;
+            --blue-pale2: #dbeafe;
+            --gray-100: #f9fafb;
+            --gray-200: #f1f5f9;
+            --gray-400: #94a3b8;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --white: #ffffff;
+            --radius-xl: 2rem;
+            --radius-lg: 1.25rem;
+            --radius-md: .875rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--white);
+            color: var(--gray-800);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Sora', sans-serif;
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 88vh;
+            background:
+                linear-gradient(135deg, rgba(37, 99, 235, .82) 0%, rgba(30, 41, 59, .65) 100%),
+                url('https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1400&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: var(--white);
+            clip-path: ellipse(55% 100% at 50% 100%);
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(255, 255, 255, .15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, .25);
+            color: #fff;
+            padding: .45rem 1.1rem;
+            border-radius: 50px;
+            font-size: .8rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.6rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, #93c5fd, #e0f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, .82);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            max-width: 520px;
+            margin-bottom: 2rem;
+        }
+
+        .btn-hero-primary {
+            background: #fff;
+            color: var(--blue);
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: .9rem;
+            padding: .85rem 2rem;
+            border-radius: 50px;
+            border: none;
+            transition: all .3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, .2);
+        }
+
+        .btn-hero-outline {
+            background: transparent;
+            color: #fff;
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            font-size: .9rem;
+            padding: .85rem 2rem;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, .4);
+            transition: all .3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .btn-hero-outline:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, .1);
+            color: #fff;
+        }
+
+        /* ─── ABOUT SECTION ─── */
+        .about-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--blue-pale2);
+            color: var(--blue);
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: .75rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: .4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--gray-800);
+            margin-bottom: 1.25rem;
+        }
+
+        .section-title .accent {
+            color: var(--blue);
+        }
+
+        .about-img-wrap {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+        }
+
+        .about-img-wrap img {
+            width: 100%;
+            border-radius: var(--radius-xl);
+            display: block;
+            transition: transform .6s ease;
+        }
+
+        .about-img-wrap:hover img {
+            transform: scale(1.04);
+        }
+
+        .about-img-badge {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 1rem 1.4rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, .12);
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+
+        .about-img-badge .icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--blue-pale);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            font-size: 1.1rem;
+        }
+
+        .about-img-badge .text strong {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--gray-800);
+            display: block;
+        }
+
+        .about-img-badge .text span {
+            font-size: .78rem;
+            color: var(--gray-400);
+        }
+
+        .about-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: .75rem;
+            padding: .65rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-size: .96rem;
+            color: var(--gray-600);
+        }
+
+        .about-features li:last-child {
+            border-bottom: none;
+        }
+
+        .about-features li .check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--blue-pale);
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .65rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* ─── HOW WE WORK (BENTO) ─── */
+        .bento-section {
+            padding: 100px 0;
+            background: var(--gray-100);
+        }
+
+        .bento-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .bento-row-1 {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .bento-row-2 {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .bento-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            border: 1px solid rgba(0, 0, 0, .05);
+            transition: all .35s cubic-bezier(.16, 1, .3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(37, 99, 235, .08);
+            border-color: rgba(37, 99, 235, .15);
+        }
+
+        .bento-card.blue-card {
+            background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+            color: #fff;
+            border-color: transparent;
+        }
+
+        .bento-card .card-num {
+            font-family: 'Sora', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--blue-pale2);
+            line-height: 1;
+            margin-bottom: .5rem;
+        }
+
+        .blue-card .card-num {
+            color: rgba(255, 255, 255, .2);
+        }
+
+        .bento-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: .75rem;
+        }
+
+        .blue-card h3 {
+            color: #fff;
+        }
+
+        .bento-card p {
+            color: var(--gray-600);
+            font-size: .92rem;
+            line-height: 1.7;
+        }
+
+        .blue-card p {
+            color: rgba(255, 255, 255, .75);
+        }
+
+        .bento-card .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-md);
+            background: var(--blue-pale);
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .blue-card .card-icon {
+            background: rgba(255, 255, 255, .15);
+            color: #fff;
+        }
+
+        .bento-card .bento-img {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 160px;
+            opacity: .18;
+            pointer-events: none;
+        }
+
+        /* ─── CAPABILITIES ─── */
+        .capabilities-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .cap-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media(min-width:992px) {
+            .cap-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .cap-card {
+            background: var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: 2rem 1.6rem;
+            text-align: center;
+            transition: all .35s;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cap-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--blue);
+            transform: scaleX(0);
+            transition: transform .35s;
+            transform-origin: left;
+        }
+
+        .cap-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cap-card:hover {
+            background: var(--white);
+            border-color: var(--blue-pale2);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(37, 99, 235, .09);
+        }
+
+        .cap-num {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            background: var(--blue);
+            color: #fff;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: .8rem;
+            border-radius: 50%;
+            line-height: 36px;
+            text-align: center;
+            margin: 0 auto 1.1rem;
+        }
+
+        .cap-card h5 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: .6rem;
+            color: var(--gray-800);
+        }
+
+        .cap-card p {
+            font-size: .85rem;
+            color: var(--gray-400);
+            line-height: 1.65;
+        }
+
+        /* ─── CENTER PHONE ─── */
+        .phone-showcase {
+            padding: 80px 0 60px;
+            background: var(--gray-100);
+        }
+
+        .phone-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-wrap img {
+            height: 460px;
+            filter: drop-shadow(0 30px 60px rgba(37, 99, 235, .18));
+            transition: transform .5s ease;
+        }
+
+        .phone-wrap img:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media(max-width:768px) {
+
+            .bento-row-1,
+            .bento-row-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <span class="hero-badge"><i class="fa-solid fa-mobile-screen-button"></i> Top App Development
+                        Company</span>
+                    <h1>Mobile App Development<br> Company in <span>Delhi</span></h1>
+                    <p>Welcome to Tekniko Global — we transform your ideas into powerful, user-friendly Android &amp;
+                        iOS apps that drive real business growth.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#" class="btn-hero-primary"><i class="fa-solid fa-paper-plane"></i> Request A Quote</a>
+                        <a href="#" class="btn-hero-outline"><i class="fa-solid fa-play"></i> View Our Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════ ABOUT ══════════ -->
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+                    <div class="about-img-wrap">
+                        <img src="https://nextr.in/blog/wp-content/uploads/2023/05/sdsd.jpg"
+                            alt="Mobile App Development">
+                        <div class="about-img-badge">
+                            <div class="icon"><i class="fa-solid fa-star"></i></div>
+                            <div class="text">
+                                <strong>200+</strong>
+                                <span>Apps Delivered</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <span class="section-label">About Tekniko Global</span>
+                    <h2 class="section-title">Best Mobile App Development Services in <span class="accent">Delhi</span>
+                    </h2>
+                    <p style="color:var(--gray-600);line-height:1.75;font-size:.97rem;">If you are looking for a Mobile
+                        App Development Company in Delhi, your search ends here. Whether iOS or Android, we build apps
+                        tailored to your business goals with high performance and scalability.</p>
+
+                    <ul class="about-features">
+                        <li>
+                            <div class="check"><i class="fa-solid fa-check"></i></div>
+                            End-to-end iOS &amp; Android app development
+                        </li>
+                        <li>
+                            <div class="check"><i class="fa-solid fa-check"></i></div>
+                            Cross-platform seamless experience
+                        </li>
+                        <li>
+                            <div class="check"><i class="fa-solid fa-check"></i></div>
+                            Modern tech stack with scalable architecture
+                        </li>
+                        <li>
+                            <div class="check"><i class="fa-solid fa-check"></i></div>
+                            From idea to launch, we handle everything
+                        </li>
+                    </ul>
+
+                    <a href="#" class="btn-hero-primary" style="background:var(--blue);color:#fff;">Learn More <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════ HOW WE WORK — BENTO ══════════ -->
+    <section class="bento-section">
+        <div class="container">
+            <div class="row mb-5 justify-content-between align-items-end">
+                <div class="col-lg-5">
+                    <span class="section-label">How We Work</span>
+                    <h2 class="section-title mb-0">Transform your vision with <span class="accent">bespoke apps</span>
+                    </h2>
+                </div>
+                <div class="col-lg-5">
+                    <p
+                        style="color:var(--gray-400);font-size:.96rem;line-height:1.75;border-left:3px solid var(--blue-pale2);padding-left:1.25rem;">
+                        We blend innovative design with surgical precision in project management to deliver
+                        high-performance digital solutions.</p>
+                </div>
+            </div>
+
+            <!-- Row 1 -->
+            <div class="bento-grid bento-row-1 mb-3">
+                <div class="bento-card">
+                    <div class="card-num">01</div>
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <h3>Latest Feature Integration</h3>
+                            <p>Whether you are a startup or a global enterprise, we craft interactive applications that
+                                are cost-effective and pivotal for business expansion.</p>
+                        </div>
+                        <div class="col-md-5 text-center d-none d-md-block">
+                            <img src="https://www.theneedleads.com/assets/img/mobile-app-about.png"
+                                style="height:190px;object-fit:contain;" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bento-card blue-card">
+                    <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                    <div class="card-num">02</div>
+                    <h3>Elite Designer Collective</h3>
+                    <p>Optimized, creative, and innovative solutions tailored perfectly to your specific brand
+                        requirements.</p>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="bento-grid bento-row-2">
+                <div class="bento-card">
+                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="card-num">03</div>
+                    <h3>Agile Momentum</h3>
+                    <p>Our project management ensures rapid delivery without compromising on the premium quality of the
+                        final product.</p>
+                </div>
+
+                <div class="bento-card" style="background:var(--blue-pale);border-color:var(--blue-pale2);">
+                    <div class="card-num" style="color:var(--blue-pale2);">04</div>
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3>Unique Idea Execution</h3>
+                            <p style="color:var(--gray-600);">We understand unique and complex concepts — promising to
+                                execute your vision precisely with a professional UI layout every time.</p>
+                        </div>
+                        <div class="col-md-4 text-end d-none d-md-block">
+                            <a href="#" class="btn-hero-primary"
+                                style="background:var(--blue);color:#fff;font-size:.85rem;padding:.75rem 1.5rem;">Explore
+                                Tech <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════ PHONE SHOWCASE ══════════ -->
+    <section class="phone-showcase">
+        <div class="container text-center">
+            <span class="section-label">Our Work</span>
+            <h2 class="section-title mb-2">Empowering Your Business <span class="accent">With Our Apps</span></h2>
+            <p style="color:var(--gray-400);margin-bottom:2.5rem;font-size:.96rem;">Built for performance, designed for
+                delight.</p>
+            <div class="phone-wrap">
+                <img src="https://www.teknikoglobal.com/public/assets/image/app_img/app-development-company.webp"
+                    alt="App Showcase">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ══════════ CAPABILITIES ══════════ -->
+    <section class="capabilities-section">
+        <div class="container">
+            <div class="row mb-5 text-center">
+                <div class="col">
+                    <span class="section-label">Our Capabilities</span>
+                    <h2 class="section-title">What Makes Us <span class="accent">Stand Out</span></h2>
+                </div>
+            </div>
+            <div class="cap-grid">
+                <div class="cap-card">
+                    <div class="cap-num">01</div>
+                    <h5>Elite Design</h5>
+                    <p>Our skilled designers deliver optimized, innovative applications tailored to your requirements.
+                    </p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-num">02</div>
+                    <h5>Agile Delivery</h5>
+                    <p>Get your required app within a short time without any compromise on quality.</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-num">03</div>
+                    <h5>Precision Execution</h5>
+                    <p>We precisely execute your unique or complex ideas into professional UI layouts.</p>
+                </div>
+                <div class="cap-card">
+                    <div class="cap-num">04</div>
+                    <h5>Latest Features</h5>
+                    <p>Apps full of interactive features crafted for startups and large-scale companies alike.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

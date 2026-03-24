@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Tekniko Global</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #ffffff;
+            color: #111;
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 20px 200px;
+            text-align: center;
+            background: linear-gradient(135deg, #4188e4, #065cdf);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: calc(1.8rem + 2vw);
+            /* Responsive font size */
+            font-weight: 700;
+            margin-top: 4rem;
+        }
+
+        .hero span {
+            color: #e3e8ef;
+        }
+
+        /* CONTACT WRAPPER - Floating effect */
+        .contact-wrapper {
+            margin-top: -80px;
+            padding-bottom: 50px;
+        }
+
+        .contact-box {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        /* INFO ITEMS */
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+            width: 45px;
+            height: 45px;
+            background: #eef4ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2584f4;
+            flex-shrink: 0;
+        }
+
+        /* FORM STYLING */
+        .form-control,
+        .form-select {
+            background: #f5f7fb;
+            border: 1px solid #e3e8ef;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn-send {
+            background: #2584f4;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-send:hover {
+            background: #1d6fe0;
+        }
+
+        /* CUSTOM MEDIA QUERIES FOR FINETUNING */
+        @media (max-width: 768px) {
+            .contact-box {
+                padding: 25px;
+            }
+
+            .hero {
+                padding: 60px 15px 120px;
+            }
+
+            .contact-wrapper {
+                margin-top: -60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Let’s Start a <span>Conversation</span></h1>
+            <p class="opacity-75">Have a project in mind? Let’s build something amazing together.</p>
+        </div>
+    </section>
+
+    <div class="container contact-wrapper">
+        <div class="contact-box">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h3 class="fw-bold mb-4">Contact Info</h3>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
+                        <div>
+                            <small class="text-muted d-block">Noida Office</small>
+                            <p class="mb-0">H-146, Sector 63, Noida, UP</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-envelope"></i></div>
+                        <div>
+                            <small class="text-muted d-block">Email</small>
+                            <p class="mb-0">corporate@teknikoglobal.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-phone"></i></div>
+                        <div>
+                            <small class="text-muted d-block">Phone</small>
+                            <p class="mb-0">+91 9065100302</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <h3 class="fw-bold mb-4">Send Message</h3>
+                    <form>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Email Address">
+                            </div>
+                        </div>
+
+                        <div class="row g-2">
+                            <div class="col-4 col-sm-3">
+                                <select class="form-select">
+                                    <option>+91</option>
+                                    <option>+971</option>
+                                </select>
+                            </div>
+                            <div class="col-8 col-sm-9">
+                                <input type="text" class="form-control" placeholder="Phone Number">
+                            </div>
+                        </div>
+
+                        <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+
+                        <button type="submit" class="btn-send">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
