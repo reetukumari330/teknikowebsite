@@ -4,110 +4,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Tekniko Global</title>
+    <title>Contact Tekniko Global | Innovative Digital Solutions</title>
+    <meta name="description"
+        content="Connect with Tekniko Global for expert mobile app development and digital transformation. Offices in Noida and Dubai.">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        :root {
+            --primary-color: #0056b3;
+            --accent-color: #00c6ff;
+            --dark-text: #2d3436;
+            --light-bg: #f9fbfc;
+            --transition: all 0.3s ease;
+        }
+
         body {
-            font-family: 'Outfit', sans-serif;
-            background: #ffffff;
-            color: #111;
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            background-color: #fff;
             overflow-x: hidden;
-            /* Prevent horizontal scroll */
         }
 
-        /* HERO SECTION */
-        .hero {
-            padding: 80px 20px 200px;
-            text-align: center;
-            background: linear-gradient(135deg, #4188e4, #065cdf);
+        /* --- Hero Section --- */
+        .hero-contact {
+            background: linear-gradient(135deg, rgba(0, 40, 85, 0.9), rgba(0, 20, 40, 0.8)),
+                url('https://wallpapers.com/images/hd/website-background-a6wbhti5rhqieecp.jpg') center/cover;
+            padding: 180px 0 120px;
             color: white;
+            clip-path: ellipse(150% 100% at 50% 0%);
         }
 
-        .hero h1 {
-            font-size: calc(1.8rem + 2vw);
-            /* Responsive font size */
-            font-weight: 700;
-            margin-top: 4rem;
+        /* --- Form Styling --- */
+        .contact-card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
         }
 
-        .hero span {
-            color: #e3e8ef;
+        .form-control,
+        .form-select {
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            transition: var(--transition);
         }
 
-        /* CONTACT WRAPPER - Floating effect */
-        .contact-wrapper {
-            margin-top: -80px;
-            padding-bottom: 50px;
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.1);
         }
 
-        .contact-box {
-            background: #fff;
+        /* --- Info Sidebar --- */
+        .info-box {
+            background: var(--light-bg);
             border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            height: 100%;
         }
 
-        /* INFO ITEMS */
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .info-icon {
-            width: 45px;
-            height: 45px;
-            background: #eef4ff;
-            border-radius: 10px;
+        .icon-circle {
+            width: 55px;
+            height: 55px;
+            background: white;
+            color: var(--primary-color);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #2584f4;
-            flex-shrink: 0;
-        }
-
-        /* FORM STYLING */
-        .form-control,
-        .form-select {
-            background: #f5f7fb;
-            border: 1px solid #e3e8ef;
-            padding: 12px;
-            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             margin-bottom: 15px;
         }
 
-        .btn-send {
-            background: #2584f4;
-            color: white;
+        /* --- Location Cards --- */
+        .location-card {
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 25px;
+            background: white;
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        /* --- Button Customization --- */
+        .btn-submit {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
             border: none;
-            padding: 15px;
-            width: 100%;
-            border-radius: 10px;
+            padding: 15px 40px;
+            border-radius: 50px;
             font-weight: 600;
-            transition: 0.3s;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
         }
 
-        .btn-send:hover {
-            background: #1d6fe0;
+        .btn-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
         }
 
-        /* CUSTOM MEDIA QUERIES FOR FINETUNING */
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .contact-box {
-                padding: 25px;
+            .hero-contact {
+                padding: 120px 0 80px;
             }
 
-            .hero {
-                padding: 60px 15px 120px;
+            .section-title {
+                font-size: 2rem;
             }
 
-            .contact-wrapper {
-                margin-top: -60px;
+            .contact-card {
+                padding: 25px !important;
             }
         }
     </style>
@@ -115,78 +129,138 @@
 
 <body>
 
-    <section class="hero">
+    <section class="hero-contact text-center">
         <div class="container">
-            <h1>Let’s Start a <span>Conversation</span></h1>
-            <p class="opacity-75">Have a project in mind? Let’s build something amazing together.</p>
+            <h1 class="display-3 fw-bold mb-3">Get In Touch</h1>
+            <p class="lead opacity-75 mx-auto" style="max-width: 600px;">
+                Partner with a team of experts to bring your digital vision to life. We're here to help you scale.
+            </p>
         </div>
     </section>
 
-    <div class="container contact-wrapper">
-        <div class="contact-box">
-            <div class="row g-5">
-                <div class="col-lg-5">
-                    <h3 class="fw-bold mb-4">Contact Info</h3>
+    <section class="py-5 mt-n5">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
 
-                    <div class="info-item">
-                        <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
-                        <div>
-                            <small class="text-muted d-block">Noida Office</small>
-                            <p class="mb-0">H-146, Sector 63, Noida, UP</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon"><i class="bi bi-envelope"></i></div>
-                        <div>
-                            <small class="text-muted d-block">Email</small>
-                            <p class="mb-0">corporate@teknikoglobal.com</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <div class="info-icon"><i class="bi bi-phone"></i></div>
-                        <div>
-                            <small class="text-muted d-block">Phone</small>
-                            <p class="mb-0">+91 9065100302</p>
-                        </div>
+                <div class="col-lg-7">
+                    <div class="contact-card bg-white p-4 p-md-5">
+                        <h3 class="fw-bold mb-4">Start a Conversation</h3>
+                        <form action="#" method="POST">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-uppercase text-muted">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="John Doe" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-uppercase text-muted">Email
+                                        Address</label>
+                                    <input type="email" class="form-control" placeholder="john@company.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold text-uppercase text-muted">Phone
+                                        Number</label>
+                                    <div class="input-group">
+                                        <select class="form-select" style="max-width: 120px;">
+                                            <option value="+91">+91 (IN)</option>
+                                            <option value="+971">+971 (UAE)</option>
+                                            <option value="+1">+1 (US)</option>
+                                        </select>
+                                        <input type="tel" class="form-control" placeholder="Phone Number">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold text-uppercase text-muted">Project
+                                        Details</label>
+                                    <textarea class="form-control" rows="4"
+                                        placeholder="Tell us about your goals..."></textarea>
+                                </div>
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-primary btn-submit w-100 w-md-auto text-white">
+                                        Send Inquiry <i class="fas fa-paper-plane ms-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
-                <div class="col-lg-7">
-                    <h3 class="fw-bold mb-4">Send Message</h3>
-                    <form>
-                        <div class="row g-2">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" placeholder="Your Name">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control" placeholder="Email Address">
+                <div class="col-lg-4">
+                    <div class="info-box">
+                        <h4 class="fw-bold mb-4">Connect Directly</h4>
+
+                        <div class="d-flex mb-4">
+                            <div class="icon-circle me-3"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <p class="small text-muted mb-0">Email us at</p>
+                                <a href="mailto:corporate@teknikoglobal.com"
+                                    class="text-decoration-none fw-bold text-dark">corporate@teknikoglobal.com</a>
                             </div>
                         </div>
 
-                        <div class="row g-2">
-                            <div class="col-4 col-sm-3">
-                                <select class="form-select">
-                                    <option>+91</option>
-                                    <option>+971</option>
-                                </select>
-                            </div>
-                            <div class="col-8 col-sm-9">
-                                <input type="text" class="form-control" placeholder="Phone Number">
+                        <div class="d-flex mb-4">
+                            <div class="icon-circle me-3"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <p class="small text-muted mb-0">Call Support</p>
+                                <a href="tel:+919065100302" class="text-decoration-none fw-bold text-dark d-block">+91
+                                    90651 00302</a>
+                                <a href="tel:+971552570370" class="text-decoration-none fw-bold text-dark d-block">+971
+                                    55 257 0370</a>
                             </div>
                         </div>
 
-                        <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                        <hr class="my-4">
 
-                        <button type="submit" class="btn-send">Send Message</button>
-                    </form>
+                        <h5 class="fw-bold mb-3">Global Presence</h5>
+                        <p class="small text-muted">Visit our regional headquarters for a coffee and a chat about your
+                            next big idea.</p>
+
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">LinkedIn</a>
+                            <a href="#" class="btn btn-outline-dark btn-sm rounded-pill px-3">Twitter</a>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
-    </div>
+    </section>
 
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="location-card">
+                        <span class="badge bg-primary mb-2">India HQ</span>
+                        <h5 class="fw-bold">Noida Office</h5>
+                        <p class="text-muted small">H-146, H Block, Sector 63, Noida, UP 201301</p>
+                        <a href="#" class="text-primary fw-bold text-decoration-none small">View on Maps →</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="location-card">
+                        <span class="badge bg-info mb-2">Middle East</span>
+                        <h5 class="fw-bold">Dubai Office</h5>
+                        <p class="text-muted small">905, Makateb Building, Deira, Dubai, UAE</p>
+                        <a href="#" class="text-primary fw-bold text-decoration-none small">View on Maps →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-dark text-white text-center">
+        <div class="container py-4">
+            <h2 class="fw-bold mb-3">Ready to transform your business?</h2>
+            <p class="lead opacity-75 mb-4">Our strategy experts are just one click away.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="mailto:corporate@teknikoglobal.com" class="btn btn-light rounded-pill px-4 fw-bold">Email
+                    Us</a>
+                <a href="tel:+919065100302" class="btn btn-outline-light rounded-pill px-4 fw-bold">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

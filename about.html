@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Tekniko Global | Premium Digital Engineering</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-grad: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+            --accent-blue: #3b82f6;
+            --dark-navy: #0f172a;
+            --soft-bg: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #334155;
+            overflow-x: hidden;
+        }
+
+        /* --- MODERN HERO --- */
+        .hero-premium {
+            background: var(--primary-grad);
+            padding: 180px 0 120px;
+            color: white;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        .hero-premium h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        /* --- STATS GRID --- */
+        .stats-wrapper {
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-card h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--primary-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        /* --- ZIG-ZAG STORY LAYOUT --- */
+        .story-section {
+            padding: 100px 0;
+        }
+
+        .story-row {
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        @media (min-width: 992px) {
+            .story-row:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .img-mask {
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 25px 25px 0px rgba(59, 130, 246, 0.1);
+        }
+
+        .section-tag {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* --- FEATURE CARDS --- */
+        .feature-box {
+            border-radius: 20px;
+            padding: 40px;
+            background: var(--soft-bg);
+            border: 1px solid #e2e8f0;
+            transition: 0.4s;
+            height: 100%;
+        }
+
+        .feature-box:hover {
+            background: white;
+            border-color: var(--accent-blue);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.1);
+        }
+
+        .icon-circle {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- CTA GRADIENT --- */
+        .cta-premium {
+            background: var(--primary-grad);
+            padding: 100px 0;
+            border-radius: 50px 50px 0 0;
+            color: white;
+        }
+
+        .btn-premium {
+            background: white;
+            color: var(--dark-navy);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-premium:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero-premium text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <span class="section-tag text-white-50">Since 2017</span>
+                    <h1>We Bridge the Gap Between <br><span style="color: #60a5fa;">Vision and Velocity</span></h1>
+                    <p class="lead opacity-75 mt-4 px-lg-5">Tekniko Global is a premier digital engineering agency
+                        dedicated to building high-scale mobile and web ecosystems for the world's most ambitious
+                        brands.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container stats-wrapper">
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <h2>6+</h2>
+                    <p class="text-muted fw-bold">Years of Mastery</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <h2>200+</h2>
+                    <p class="text-muted fw-bold">Apps Deployed</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <h2>130+</h2>
+                    <p class="text-muted fw-bold">Global Partners</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="stat-card">
+                    <h2>5★</h2>
+                    <p class="text-muted fw-bold">Average Rating</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="story-section">
+        <div class="container">
+            <div class="row story-row">
+                <div class="col-lg-6">
+                    <div class="img-mask">
+                        <img src="https://www.teknikoglobal.com/public/assets/images/our-company.webp" class="img-fluid"
+                            alt="Team">
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <span class="section-tag">Our Identity</span>
+                    <h2 class="display-5 fw-bold mb-4">Quality Over Quantity. Always.</h2>
+                    <p class="text-muted mb-4">Headquartered in Noida, India, with a growing presence in Dubai and major
+                        Indian tech hubs, Tekniko Global has evolved from a boutique development shop into a full-scale
+                        digital powerhouse.</p>
+                    <p class="text-muted">We don't just write code; we architect solutions. Our approach combines
+                        rigorous Agile methodologies with the latest frontend frameworks like <strong>React</strong> and
+                        <strong>Next.js</strong> to deliver unmatched performance.</p>
+                </div>
+            </div>
+
+            <div class="row story-row">
+                <div class="col-lg-6">
+                    <div class="img-mask" style="box-shadow: -25px 25px 0px rgba(96, 165, 250, 0.1);">
+                        <img src="https://www.teknikoglobal.com/public/assets/image/app_img/mission-vision.webp"
+                            class="img-fluid" alt="Vision">
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-5">
+                    <span class="section-tag">Our Vision</span>
+                    <h2 class="display-5 fw-bold mb-4">Architecting the Future of Digital Commerce</h2>
+                    <p class="text-muted mb-4">Our mission is simple: To empower businesses with technology that scales
+                        effortlessly. Whether it's a fintech solution or a luxury astrology platform, we focus on the
+                        "User Experience First" philosophy.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Innovative Digital
+                            Marketing Strategies</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> World-class Mobile
+                            Engineering</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Enterprise-grade Web Platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 mb-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">The Tekniko Edge</span>
+                <h2 class="fw-bold display-6">Why Industry Leaders Trust Us</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fas fa-bolt"></i></div>
+                        <h4>Agile Precision</h4>
+                        <p class="text-muted">Sprints that matter. We deliver incremental value every week, ensuring
+                            your product hits the market faster.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fas fa-lock"></i></div>
+                        <h4>Enterprise Security</h4>
+                        <p class="text-muted">Built with security at the core. We implement SOC2-level standards and
+                            data encryption for every project.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="feature-box">
+                        <div class="icon-circle"><i class="fas fa-gem"></i></div>
+                        <h4>Premium UX/UI</h4>
+                        <p class="text-muted">Aesthetic excellence meets functional design. We build interfaces that
+                            users love to interact with.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-premium text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-4">Ready to Build the Next Big Thing?</h2>
+            <p class="lead mb-5 opacity-75">Join 130+ clients who scaled their business with Tekniko Global.</p>
+            <a href="https://www.teknikoglobal.com/contact" class="btn-premium">Let's Talk Strategy <i
+                    class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
